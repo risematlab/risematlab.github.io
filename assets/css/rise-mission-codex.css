@@ -1,0 +1,60 @@
+/* Isolated comparison design; loaded by about-codex.html only. */
+#mission .mc-lead { max-width: 1000px; margin: 0 0 36px; color: #16392f; font-size: 18px; line-height: 1.65; font-weight: 400; }
+#mission .mc-lead strong { font-weight: 750; color: #124c40; }
+.mc-panel { min-width: 0; padding: clamp(20px, 3vw, 36px); border: 1px solid #dbe5dd; border-radius: 6px; background: #f3f6f0; }
+.mc-panel-head { margin-bottom: 24px; }
+.mc-panel-head h3 { margin: 0 0 8px; color: #16392f; font-size: clamp(23px, 2vw, 30px); font-weight: 700; }
+.mc-panel-head p { max-width: 760px; margin: 0; color: #536a60; line-height: 1.55; }
+.mc-panel-head p + p { margin-top: 8px; font-size: 14px; }
+.mc-topics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; }
+.mc-topic { min-width: 0; padding: 0 7px; outline: none; }
+.mc-topic-card { display: flex; flex-direction: column; height: 100%; min-height: 176px; padding: 17px; border: 1px solid #dbe5dd; border-radius: 6px; background: #fff; color: #16392f; transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease, opacity .2s ease; }
+.mc-topic-number { display: inline-flex; align-items: center; justify-content: center; width: 35px; height: 35px; margin-bottom: 13px; border-radius: 50%; background: #e8f2d8; color: #124c40; font-size: 12px; font-weight: 800; letter-spacing: .03em; flex: none; }
+.mc-topic-name { font-size: 15px; line-height: 1.4; font-weight: 700; overflow-wrap: anywhere; }
+.mc-topic:focus-visible .mc-topic-card { outline: 3px solid #7fa65c; outline-offset: 3px; }
+.mc-topic:hover .mc-topic-card, .mc-topic.is-active .mc-topic-card, .mc-topic:focus-visible .mc-topic-card { border-color: #86ad72; background: #fbfdf8; box-shadow: 0 5px 18px rgba(18,76,64,.12); }
+.mc-panel.has-active .mc-topic:not(.is-active) .mc-topic-card { opacity: .72; }
+.mc-chart { margin: 0; min-width: 0; }
+.mc-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.mc-grid-line { stroke: #dbe5dd; stroke-width: 1; }
+.mc-guide { stroke: #a8c0af; stroke-width: 1.2; stroke-dasharray: 3 5; }
+.mc-area { fill: url(#mc-area-gradient); }
+.mc-curve-halo { fill: none; stroke: #d6ef9e; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; opacity: .58; }
+.mc-curve { fill: none; stroke: #124c40; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.mc-node circle { fill: #fff; stroke: #124c40; stroke-width: 2.5; transition: fill .2s ease, stroke .2s ease, opacity .2s ease; }
+.mc-node text { fill: #124c40; font: 700 12px system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.mc-panel.has-active .mc-node:not(.is-active) { opacity: .5; }
+.mc-node.is-active circle { fill: #d6ef9e; stroke: #124c40; stroke-width: 3.5; }
+.mc-axis-line { stroke: #7e9d89; stroke-width: 1.5; }
+.mc-axis-tick { stroke: #5c7f69; stroke-width: 1.5; }
+.mc-axis-label { fill: #124c40; font: 700 14px system-ui, sans-serif; text-anchor: middle; }
+.mc-axis-caption { fill: #6e8777; font: 11px system-ui, sans-serif; text-anchor: middle; }
+.mc-chart figcaption { margin: 4px 7px 0; color: #5a6e63; font-size: 13px; line-height: 1.5; }
+.mc-chart figcaption strong { color: #234d3c; }
+.mc-approach { padding-top: clamp(42px, 5vw, 72px); }
+.mc-approach .btn { margin-top: 28px; }
+.mc-approach .text-card { height: 100%; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .mc-approach .text-card { transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease; }
+  .mc-approach .text-card:hover { background: #f2f6ef; border-color: #a0ca80; box-shadow: 0 0 0 1px rgba(160,202,128,.45), 0 0 28px rgba(160,202,128,.52), 0 10px 26px rgba(18,76,64,.12); }
+}
+@media (min-width: 1100px) and (prefers-reduced-motion: no-preference) {
+  .mc-panel.mc-waiting .mc-curve, .mc-panel.mc-waiting .mc-curve-halo { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .mc-panel.mc-waiting .mc-area, .mc-panel.mc-waiting .mc-node { opacity: 0; }
+  .mc-panel.mc-animate .mc-curve, .mc-panel.mc-animate .mc-curve-halo { stroke-dasharray: 1; animation: mc-draw 2.8s ease-out both; }
+  .mc-panel.mc-animate .mc-area { animation: mc-fade 1s .4s both; }
+  .mc-panel.mc-animate .mc-node { animation: mc-fade .35s both; animation-delay: var(--mc-delay); }
+  @keyframes mc-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes mc-fade { from { opacity: 0; } to { opacity: 1; } }
+}
+@media (max-width: 1099.98px) {
+  .mc-chart { display: none; }
+  .mc-topics { position: relative; display: block; padding: 0 0 0 12px; }
+  .mc-topics::before { content: ''; position: absolute; top: 18px; bottom: 42px; left: 28px; width: 2px; background: #b1c9b2; }
+  .mc-topic { position: relative; padding: 0 0 12px 49px; }
+  .mc-topic:last-child { padding-bottom: 0; }
+  .mc-topic-card { min-height: 0; padding: 18px 20px; }
+  .mc-topic-number { position: absolute; left: 0; top: 16px; margin: 0; background: #e8f2d8; border: 2px solid #f3f6f0; }
+  .mc-topic-name { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .mc-topic-card, .mc-node circle { transition: none; } }

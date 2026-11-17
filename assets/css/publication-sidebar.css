@@ -1,0 +1,144 @@
+/* Publications filter layout. The existing mobile chips remain unchanged. */
+#publication-list .publication-layout {
+  margin-top: 32px;
+  min-width: 0;
+}
+
+#publication-list .publication-sidebar,
+#publication-list .publication-results {
+  min-width: 0;
+}
+
+#publication-list .publication-sidebar .publication-search {
+  margin-top: 0;
+}
+
+#publication-list .publication-results > .rise-section > .rise-wrap {
+  max-width: none;
+  padding-inline: 0;
+}
+
+#publication-filters-v2 .publication-clear {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #124c40;
+  box-shadow: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+#publication-filters-v2 .publication-clear:hover {
+  color: #0a362d;
+  background: transparent;
+}
+
+#publication-filters-v2 .publication-clear:focus-visible {
+  outline: 3px solid #93bc66;
+  outline-offset: 4px;
+}
+
+#publication-filters-v2 .publication-clear[hidden] {
+  display: none !important;
+}
+
+/* On smaller screens keep the existing horizontal chip labels. */
+#publication-filters-v2 .pub-topic-count {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #publication-list .publication-layout {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    column-gap: 56px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  #publication-list .publication-sidebar {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+
+  #publication-list .publication-sidebar .rise-search-status {
+    margin-bottom: 0;
+  }
+
+  #publication-list .publication-results > .pub-year {
+    padding-block: 0 35px;
+  }
+
+  #publication-list .publication-results > .publication-category {
+    padding-block: 20px 40px;
+  }
+
+  #publication-filters-v2 .pub-filter-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  #publication-filters-v2 .pub-filter-row .rise-eyebrow {
+    flex: none;
+    margin: 0 0 12px;
+  }
+
+  #publication-filters-v2 .pub-filter-row button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px;
+    border: 0;
+    border-bottom: 1px solid #d8e4da;
+    border-radius: 0;
+    background: transparent;
+    color: #124c40;
+    box-shadow: none;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  #publication-filters-v2 .pub-filter-row button:hover {
+    background: #edf3ec;
+  }
+
+  #publication-filters-v2 .pub-filter-row button[aria-pressed="true"] {
+    background: #e7f1dc;
+    color: #124c40;
+    box-shadow: inset 3px 0 #124c40;
+  }
+
+  #publication-filters-v2 .pub-topic-label {
+    min-width: 0;
+  }
+
+  #publication-filters-v2 .pub-topic-count {
+    display: block;
+    flex: 0 0 auto;
+    color: #53645f;
+    font-size: 13px;
+  }
+
+  #publication-filters-v2 .pub-filter-row button[aria-pressed="true"] .pub-topic-count {
+    color: #124c40;
+  }
+}
+
+/* Secondary link to the lab’s publication record. */
+#publication-list .publication-scholar { color: #124c40; background: transparent; border: 1px solid #124c40; }
+#publication-list .publication-scholar:hover { color: #fff; background: #124c40; }
+#publication-list .publication-scholar:focus-visible { outline: 3px solid #93bc66; outline-offset: 3px; }

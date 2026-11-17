@@ -1,0 +1,344 @@
+.rm-wrap {
+  color: #16392f;
+}
+
+.rm-map-title {
+  font-size: clamp(25px,2vw,32px);
+  font-weight: 700;
+  margin: 40px 0 8px;
+}
+
+.rm-map-lede, .rm-status {
+  color: #536c61;
+  font-size: 15px;
+}
+
+.rm-flow {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.rm-lane {
+  min-width: 0;
+  position: relative;
+}
+
+.rm-lane:not(:last-child):after {
+  content: '→';
+  position: absolute;
+  right: -21px;
+  top: 28px;
+  color: #7d9b88;
+  font-size: 23px;
+}
+
+.rm-stage {
+  width: 100%;
+  min-height: 91px;
+  border: 1px solid #bed2c3;
+  background: #edf4ed;
+  color: #164438;
+  border-radius: 4px;
+  text-align: left;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.rm-stage strong {
+  font-size: 22px;
+}
+
+.rm-stage span {
+  font-size: 14px;
+}
+
+.rm-stage[aria-pressed=true] {
+  background: #124c40;
+  color: white;
+  border-color: #124c40;
+}
+
+.rm-lane-topics {
+  display: grid;
+  gap: 12px;
+  border-left: 1px solid #a8c2ad;
+  margin: 0 0 0 12px;
+  padding: 20px 0 0 14px;
+}
+
+.rm-topic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 150px;
+  padding: 18px;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  background-image: linear-gradient(90deg,rgba(8,43,34,.92),rgba(8,43,34,.47)),var(--rm-photo);
+  background-size: cover;
+  background-position: center;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.rm-topic::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  width: 14px;
+  border-top: 1px solid #a8c2ad;
+}
+
+.rm-topic:hover, .rm-topic[data-related=true] {
+  outline-color: #a9d476;
+  color: white;
+}
+
+.rm-topic-title {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 700;
+  max-width: 95%;
+}
+
+.rm-tags {
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #d8eca8;
+  margin-top: 9px;
+}
+
+.rm-arrow {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  font-size: 20px;
+}
+
+.rm-stage:focus-visible, .rm-topic:focus-visible, .rm-papers a:focus-visible, .rm-more:focus-visible {
+  outline: 3px solid #9bc96d;
+  outline-offset: 3px;
+}
+
+.rm-status {
+  min-height: 24px;
+  margin: 16px 0 0;
+}
+
+.rm-detail {
+  padding: 76px 0;
+  scroll-margin-top: 100px;
+}
+
+.rm-soft {
+  background: #f1f5ed;
+}
+
+.rm-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);
+  gap: clamp(40px,5vw,90px);
+  align-items: start;
+}
+
+.rm-detail h2 {
+  font-size: clamp(30px,2.5vw,42px);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin: 14px 0 20px;
+}
+
+.rm-description {
+  color: #536b61;
+  font-size: 18px;
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+.rm-related-label {
+  font-weight: 700;
+  color: #124c40;
+  letter-spacing: .13em;
+  font-size: 12px;
+  margin: 30px 0 14px;
+}
+
+.rm-papers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rm-papers li {
+  padding: 15px 0;
+  border-top: 1px solid #dce7dc;
+}
+
+.rm-papers a {
+  display: block;
+  color: #124c40;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.42;
+}
+
+.rm-papers a:hover {
+  text-decoration: underline;
+}
+
+.rm-papers span {
+  display: block;
+  color: #647a70;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.rm-more {
+  display: inline-block;
+  color: #124c40;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.rm-detail-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.rm-crack {
+  aspect-ratio: auto;
+  margin: 0;
+}
+
+.rm-crack img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.rm-crack figcaption {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: calc(100% * 10 / 808);
+  margin-top: 8px;
+  color: #173f33;
+  font-size: clamp(.8125rem, 1.35vw, .9375rem);
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width:850px) {
+  .rm-flow {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width:850px) {
+  .rm-lane:not(:last-child):after {
+    display: none;
+  }
+}
+
+@media (max-width:850px) {
+  .rm-lane-topics {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:850px) {
+  .rm-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width:850px) {
+  .rm-detail-photo {
+    max-width: 620px;
+    grid-row: 1;
+  }
+}
+
+@media (max-width:850px) {
+  .rm-detail {
+    padding: 55px 0;
+  }
+}
+
+@media (max-width:500px) {
+  .rm-lane-topics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:500px) {
+  .rm-topic {
+    min-height: 120px;
+  }
+}
+
+@media (max-width:500px) {
+  .rm-detail h2 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width:500px) {
+  .rm-description {
+    font-size: 16px;
+  }
+}
+
+.rm-stage, .rm-stage[aria-pressed=true] {
+  background-image: linear-gradient(90deg,rgba(8,43,34,.91),rgba(8,43,34,.5)),var(--rm-stage-photo);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.rm-stage[aria-pressed=true] {
+  box-shadow: 0 0 0 3px #b8d981;
+  background-color: #124c40;
+}
+
+html:has(#overview .rm-flow) {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html:has(#overview .rm-flow) {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* Full ACS Omega cover, shown without cropping. */
+#computational .rm-detail-photo {
+  background-image: url('../img/acs-omega-well-cement-cover-2026.png') !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 2453 / 3262;
+  width: min(100%, 440px);
+  justify-self: center;
+}
+@media (max-width: 850px) {
+  #computational .rm-detail-photo { width: min(100%, 340px); }
+}

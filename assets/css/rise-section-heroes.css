@@ -1,0 +1,166 @@
+/* Shared frame and text levels for the homepage carousel and navigation heroes. */
+.rise-site .rise-section-hero,
+.home-page .rise-hero {
+  --hero-green: #0c342b;
+  --hero-photo-width: 100%;
+  --hero-photo-height: 56.25vw;
+  --hero-copy-inset: clamp(24px, 4vw, 56px);
+  --hero-copy-top: calc(var(--hero-photo-height) + 28px);
+  --hero-copy-end: var(--hero-copy-inset);
+  --hero-title-lines: 2lh;
+  --hero-gradient: linear-gradient(0deg, #0c342b, rgba(12, 52, 43, .46) 28%, transparent 68%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: auto;
+  padding: 0;
+  background: var(--hero-green);
+  color: #fff;
+}
+
+.rise-section-hero .rise-section-hero-image,
+.home-page .rise-hero .carousel-item > img {
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: var(--hero-photo-width) !important;
+  height: var(--hero-photo-height) !important;
+  max-width: none;
+  object-fit: cover;
+  object-position: var(--hero-focus, center);
+  z-index: 0;
+}
+
+.rise-section-hero::after,
+.home-page .rise-hero .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: var(--hero-photo-width);
+  height: var(--hero-photo-height);
+  background: var(--hero-gradient);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rise-section-hero .rise-wrap,
+.home-page .rise-hero .rise-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--hero-copy-top) var(--hero-copy-end) 40px var(--hero-copy-inset);
+}
+
+.home-page .rise-hero .carousel-item {
+  height: auto;
+  min-height: calc(var(--hero-photo-height) + 360px);
+}
+
+.home-page .rise-hero .rise-hero-copy {
+  padding-bottom: 88px;
+}
+
+.rise-section-hero .rise-eyebrow,
+.home-page .rise-hero .rise-eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.8px;
+  color: #d6ef9e;
+}
+
+.rise-section-hero .rise-page-title,
+.home-page .rise-hero .rise-hero-title {
+  max-width: none;
+  min-block-size: var(--hero-title-lines);
+  margin: 0 0 12px;
+  font-size: clamp(32px, 3.3vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.rise-section-hero .rise-page-lede,
+.home-page .rise-hero .rise-hero-description {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(16px, 1.4vw, 19px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #dce9dc;
+}
+
+.home-page .rise-hero .rise-actions { margin-top: 18px; }
+.home-page .rise-hero .rise-actions .btn { font-size: 14px; }
+.home-page .rise-hero .carousel-indicators { margin-left: var(--hero-copy-inset); }
+
+.rise-section-hero-publications { --hero-focus: 50% 44%; }
+.rise-section-hero-news { --hero-focus: 50% 55%; }
+.rise-section-hero-media { --hero-focus: 50% 60%; }
+.rise-section-hero-about { --hero-focus: 50% 63%; }
+.rise-section-hero-join { --hero-focus: 50% 24%; }
+.rise-section-hero-about .rise-name-nowrap { white-space: nowrap; }
+.home-page .rise-hero .carousel-item:nth-child(1) { --hero-focus: 50% 30%; }
+.home-page .rise-hero .carousel-item:nth-child(2) { --hero-focus: 50% 25%; }
+
+@media (max-width: 360px) {
+  .rise-site .rise-section-hero,
+  .home-page .rise-hero { --hero-title-lines: 3lh; }
+}
+
+@media (min-width: 1200px) {
+  .home-page .rise-hero {
+    --hero-split: 40%;
+    --hero-photo-width: calc(100% - var(--hero-split));
+    --hero-photo-height: 33.75vw;
+    --hero-copy-inset: max(clamp(24px, 4vw, 56px), calc((100% - 1388px) / 2));
+    --hero-copy-top: max(68px, calc(var(--hero-photo-height) / 2 - 142px));
+    --hero-copy-end: calc(var(--hero-photo-width) + 20px);
+    --hero-gradient: linear-gradient(90deg, #0c342b, rgba(12, 52, 43, .62) 12%, transparent 36%);
+    min-height: var(--hero-photo-height);
+  }
+
+  .home-page .rise-hero .carousel-item { min-height: var(--hero-photo-height); }
+  .home-page .rise-hero .rise-hero-copy { padding-bottom: 44px; }
+}
+
+/* Keep the navigation page headers more compact than the homepage carousel. */
+.rise-site .rise-section-hero {
+  --hero-photo-height: clamp(150px, 45vw, 340px);
+  --hero-copy-top: calc(var(--hero-photo-height) + 22px);
+  --hero-title-lines: 0px;
+}
+
+.rise-site .rise-section-hero .rise-wrap {
+  padding-bottom: 28px;
+}
+
+@media (min-width: 992px) {
+  .rise-site .rise-section-hero {
+    --hero-photo-width: min(60%, 1320px);
+    --hero-photo-height: clamp(350px, 24vw, 480px);
+    --hero-copy-inset: max(clamp(24px, 4vw, 56px), calc((100% - 1388px) / 2));
+    --hero-copy-top: 32px;
+    --hero-copy-end: calc(var(--hero-photo-width) + 20px);
+    --hero-gradient: linear-gradient(90deg, #0c342b, rgba(12, 52, 43, .62) 12%, transparent 36%);
+    display: grid;
+    align-items: center;
+    min-height: var(--hero-photo-height);
+  }
+
+  .rise-site .rise-section-hero .rise-wrap {
+    padding-bottom: 32px;
+  }
+
+  .rise-section-hero-about {
+    --hero-focus: 50% 67%;
+  }
+}
+
+/* Align the first content section across the primary navigation pages. */
+.rise-site main > .rise-section-hero + .rise-section {
+  padding-block: clamp(36px, 4.2vw, 56px);
+}

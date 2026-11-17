@@ -1,0 +1,64 @@
+/* Connect the three scale buttons with continuous, high-contrast arrows. */
+
+#overview .rm2-connector {
+  position: relative;
+  display: block;
+  height: 32px;
+  color: #2e6849;
+}
+
+#overview .rm2-connector:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 5px;
+  top: 50%;
+  height: 3px;
+  background: #4b8061;
+  transform: translateY(-50%);
+}
+
+#overview .rm2-connector span {
+  position: absolute;
+  display: block;
+  right: 5px;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  background: transparent;
+  border: solid #4b8061;
+  border-width: 3px 3px 0 0;
+  transform: translateY(-50%) rotate(45deg);
+  font-size: 0;
+  line-height: 0;
+}
+
+@media (max-width:620px) {
+  #overview .rm2-connector {
+    height: 36px;
+    transform: none;
+  }
+}
+
+@media (max-width:620px) {
+  #overview .rm2-connector:before {
+    left: 50%;
+    right: auto;
+    top: 0;
+    bottom: 5px;
+    width: 3px;
+    height: auto;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width:620px) {
+  #overview .rm2-connector span {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 5px;
+    transform: translateX(-50%) rotate(135deg);
+  }
+}
+

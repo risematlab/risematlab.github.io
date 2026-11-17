@@ -1,0 +1,448 @@
+/* Keep the PI profile and biography aligned without widening the reading column. */
+#principal-investigator .rise-people-grid {
+  gap: clamp(24px, 4vw, 56px);
+  margin-top: clamp(20px, 2.5vw, 32px);
+}
+
+@media (min-width: 768px) {
+  #principal-investigator .rise-people-grid {
+    grid-template-columns: clamp(240px, 25vw, 320px) minmax(0, 1fr);
+  }
+}
+
+#principal-investigator .rise-pi {
+  width: 100%;
+  max-width: 340px;
+  margin-inline: auto;
+  padding: clamp(16px, 1.5vw, 20px);
+}
+
+#principal-investigator .pi-portrait {
+  height: auto;
+  margin-bottom: 16px;
+}
+
+#principal-investigator .rise-pi .rise-eyebrow {
+  margin-bottom: 5px;
+}
+
+.pi-affiliation {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pi-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 8px;
+  border-top: 1px solid #dbe5dd;
+  margin: 14px 0 0;
+  padding: 6px 0 0;
+  text-align: left;
+  list-style: none;
+}
+
+.pi-links .rise-link {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  min-height: 44px;
+  font-size: 13px;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pi-links .rise-link:focus-visible {
+  outline: 2px solid var(--rise-green);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.pi-biography {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.65;
+  color: var(--rise-muted);
+}
+
+.pi-biography :is(h3, h4) {
+  color: var(--rise-ink);
+  font-weight: 650;
+}
+
+.pi-biography h3 {
+  margin: 0 0 8px;
+  font-size: clamp(23px, 2vw, 28px);
+}
+
+.pi-biography h4 {
+  margin: 0 0 5px;
+  font-size: 1em;
+  line-height: 1.3;
+}
+
+.pi-biography p {
+  margin: 0;
+}
+
+.pi-biography .pi-bio-intro {
+  color: var(--rise-ink);
+  font-size: 1.1em;
+}
+
+.pi-bio-topics {
+  border-top: 1px solid #dbe5dd;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.pi-bio-topics p + h4 {
+  margin-top: 18px;
+}
+
+.person-profile-link:focus-visible,
+.person-details > summary:focus-visible {
+  outline: 2px solid var(--rise-green);
+  outline-offset: 3px;
+}
+
+@media (max-width: 429.98px) {
+  .pi-name {
+    font-size: clamp(20px,7vw,30px);
+  }
+}
+
+.pi-credentials {
+  white-space: nowrap;
+}
+
+#community .people-group-heading {
+  margin: 30px 0 14px;
+  font-size: clamp(20px, 2vw, 25px);
+}
+
+#community .person-card,
+#alumni .person-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-card-portrait {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 17px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.person-card-portrait .person-photo {
+  display: block;
+  margin-block: 0;
+}
+
+#community .person-card-portrait :is(.diego-photo,.klay-photo,.minseok-photo,.lauren-photo) {
+  background: #fff;
+}
+
+.lauren-photo {
+  object-fit: contain;
+  object-position: center;
+}
+
+#alumni .person-photo {
+  object-fit: contain;
+  object-position: center;
+}
+
+.person-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.person-card-body .person-card-label {
+  margin: 0 0 6px;
+}
+
+.person-card-body > h4 {
+  margin: 0 0 9px;
+}
+
+.person-card-body > :is(.person-research,.alumni-outcome) {
+  margin: 0 0 6px;
+  line-height: 1.55;
+}
+
+.person-card-body .alumni-outcome {
+  color: var(--rise-muted);
+}
+
+.person-card-body .alumni-outcome strong {
+  color: var(--rise-ink);
+}
+
+.person-profile-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  min-height: 44px;
+  margin-top: auto;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.person-details {
+  margin: 3px 0 0;
+}
+
+.person-details > summary {
+  align-content: center;
+  min-height: 44px;
+  color: var(--rise-green);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.person-details-copy p {
+  margin: 0 0 6px;
+}
+
+.person-details-copy .person-meta {
+  font-size: 14px;
+}
+
+.person-details-copy p:last-child {
+  color: var(--rise-muted);
+}
+
+.alumni-directory > .alumni-group {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 13px;
+  border-top: 1px solid #dbe5dd;
+}
+
+.alumni-group > .people-group-heading {
+  margin: 0 0 14px;
+  font-size: clamp(18px, 1.45vw, 21px);
+  letter-spacing: -.2px;
+}
+
+.alumni-group > .people-student-grid {
+  flex: 1;
+}
+
+.people-gallery figure {
+  margin: 0;
+}
+
+.people-gallery .lab-gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.people-gallery figcaption {
+  margin-top: 9px;
+  color: var(--rise-muted);
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .person-details[open] > summary {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .alumni-directory > .alumni-group:first-child {
+    grid-column: 1;
+  }
+
+  .alumni-directory > .alumni-group:nth-child(2) {
+    grid-column: 2 / span 2;
+  }
+
+  .alumni-directory > .alumni-group:first-child > .people-student-grid {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .alumni-directory > .alumni-group:nth-child(2) > .people-student-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  #community .people-student-grid,
+  #alumni .alumni-group .people-student-grid {
+    gap: 12px;
+  }
+
+  #community .person-card,
+  #alumni .person-card {
+    display: grid;
+    grid-template-columns: clamp(72px,21vw,100px) minmax(0,1fr);
+    align-items: start;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .person-card-portrait {
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+  }
+
+  #community .person-card-portrait .person-photo,
+  #alumni .person-card-portrait .person-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: none;
+  }
+
+  #community .person-card-portrait .peizhi-photo {
+    object-position: center 28%;
+  }
+
+  .person-card-body .person-card-label {
+    margin-bottom: 3px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .person-card-body > h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .person-card-body > :is(.person-research,.alumni-outcome) {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .person-details > summary {
+    font-size: 13px;
+  }
+
+  .person-details-copy p {
+    font-size: 14px;
+  }
+}
+
+/* Lab Life photo gallery. The static grid remains usable without scripting. */
+.people-gallery-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px 24px;
+  margin-bottom: 24px;
+}
+
+.people-gallery-header > .rise-intro {
+  margin: 0;
+}
+
+.people-gallery-controls:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.people-gallery-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #9bb5a7;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--rise-green);
+  cursor: pointer;
+}
+
+.people-gallery-arrow span {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+.people-gallery-arrow:hover {
+  background: #dfece1;
+  border-color: var(--rise-green);
+}
+
+.people-gallery-arrow:focus-visible,
+.people-gallery.is-carousel:focus-visible {
+  outline: 2px solid var(--rise-green);
+  outline-offset: 3px;
+}
+
+.people-gallery-status {
+  min-width: 8.4em;
+  margin: 0;
+  color: var(--rise-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.people-gallery.is-carousel {
+  --gallery-gap: 20px;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  grid-template-columns: none;
+  gap: var(--gallery-gap);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.people-gallery.is-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.people-gallery.is-carousel > figure {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.people-gallery .lab-gallery-image-fieldwork {
+  object-position: 50% 22%;
+}
+
+.people-gallery .lab-gallery-image-lab {
+  object-position: 50% 20%;
+}
+
+.people-gallery .lab-gallery-image-candidacy {
+  object-position: 50% 35%;
+}
+
+@media (min-width: 640px) {
+  .people-gallery.is-carousel {
+    grid-auto-columns: calc((100% - var(--gallery-gap)) / 2);
+  }
+}
+
+@media (min-width: 992px) {
+  .people-gallery.is-carousel {
+    grid-auto-columns: calc((100% - 2 * var(--gallery-gap)) / 3);
+  }
+}

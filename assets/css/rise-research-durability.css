@@ -1,0 +1,8 @@
+/* Show only the cracked left specimen in the durability topic card. */
+
+.rm-topic[data-topic="durability"] {
+  background-size: 100% 100%, 250% auto !important;
+  background-position: center, left center !important;
+  background-repeat: no-repeat, no-repeat;
+}
+

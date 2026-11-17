@@ -1,0 +1,52 @@
+#opportunities .rise-section-title {
+  margin-bottom: 24px;
+}
+
+#opportunities .text-card h3 {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+
+#opportunities .text-card > p,
+#opportunities .join-application p {
+  margin: 0;
+  color: var(--rise-muted);
+}
+
+#opportunities .join-application {
+  display: grid;
+  gap: 16px 36px;
+  max-width: none;
+  margin-top: 24px;
+}
+
+#opportunities .join-application .rise-section-title {
+  margin-bottom: 10px;
+  font-size: clamp(24px, 2.8vw, 34px);
+}
+
+.join-inquiry-list {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+.join-inquiry-list li + li {
+  margin-top: 6px;
+}
+
+.join-inquiry-link {
+  justify-self: start;
+}
+
+@media (min-width: 768px) {
+  #opportunities .join-application {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+
+  .join-inquiry-list {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+  }
+}

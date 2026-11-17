@@ -1,0 +1,14 @@
+.me-10 {
+  margin-right: 10.5rem !important;
+}
+
+.ms-auto {
+  margin-left: auto!important;
+}
+
+@media (min-width:768px) {
+  .ms-md-2 {
+    margin-left: .5rem!important;
+  }
+}
+

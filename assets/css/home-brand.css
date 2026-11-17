@@ -1,0 +1,325 @@
+.rise-nav .rise-logo-wrap {
+  width: 60px;
+  height: 60px;
+  background: #18453b;
+  border-radius: 0;
+  isolation: isolate;
+  flex-shrink: 0;
+}
+
+.rise-nav .rise-logo {
+  width: 60px;
+  height: 60px;
+  mix-blend-mode: screen;
+}
+
+.rise-nav .rise-brand-name {
+  color: #18453b;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  line-height: 1.2;
+}
+
+.home-brand-expansion {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .005em;
+}
+
+.home-brand-title {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* Match the third slide's image area and green transition across the carousel. */
+@media (min-width: 1200px) {
+  .rise-nav .home-brand-expansion { font-size: 14px; }
+  .rise-nav .home-brand-title { font-size: 22px; }
+  .rise-nav .nav-link { font-size: 17px; }
+  .rise-nav .btn { font-size: 17px; }
+}
+
+/* The longer brand needs a little more room before the desktop menu expands. */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  .rise-nav.navbar-expand-lg { flex-wrap: wrap; }
+  .rise-nav.navbar-expand-lg .navbar-toggler { display: block; }
+  .rise-nav.navbar-expand-lg .navbar-collapse { flex-basis: 100%; }
+  .rise-nav.navbar-expand-lg .navbar-collapse:not(.show) { display: none !important; }
+  .rise-nav.navbar-expand-lg .navbar-collapse.show { display: block !important; }
+  .rise-nav.navbar-expand-lg .navbar-nav { flex-direction: column; }
+}
+
+/* Homepage section spacing and navigation. */
+.home-page :is(#home-research, #home-publications, #home-news, #home-people) {
+  padding-block: clamp(36px, 4.2vw, 52px);
+}
+
+.home-page :is(#home-research, #home-news) {
+  background-color: #fff;
+}
+
+.home-page #home-people {
+  background-color: #e9f0e8;
+}
+
+.home-page .home-section-header {
+  display: grid;
+  column-gap: 24px;
+  margin-bottom: 24px;
+}
+
+.home-section-header > .rise-eyebrow {
+  margin-bottom: 12px;
+}
+
+.home-section-header > .rise-section-title {
+  margin-bottom: 0;
+}
+
+.home-section-header > .rise-intro {
+  margin: 12px 0 0;
+}
+
+.home-page .home-section-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-section-header > .home-section-link {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+.home-community-copy > .rise-intro {
+  margin-bottom: 8px;
+}
+
+.home-community-actions {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+}
+
+.home-section-link:focus-visible {
+  outline: 2px solid var(--rise-green);
+  outline-offset: 3px;
+}
+
+@media (min-width: 850px) {
+  .home-section-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .home-section-header > :is(.rise-eyebrow, .rise-section-title) {
+    grid-column: 1;
+  }
+
+  .home-section-header > .rise-intro {
+    grid-column: 1 / -1;
+  }
+
+  .home-section-header > .home-section-link {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: end;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+}
+
+.home-page #home-research .rise-grid {
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.home-page #home-research .rise-card-body {
+  gap: 10px;
+  padding: clamp(18px, 1.65vw, 22px);
+}
+
+.home-page #home-research .rise-card-body > .rise-link {
+  padding-top: 6px;
+}
+
+/* Compact entries use the publication markup maintained by the content manager. */
+#home-publications .pub-entry {
+  border-top: 1px solid #c5d7ca;
+  padding: 16px 0;
+}
+
+#home-publications .pub-entry h3 {
+  margin-bottom: 8px;
+}
+
+#home-publications .featured-paper-image {
+  height: clamp(144px, 14vw, 188px);
+  object-position: center;
+  padding: 8px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 1200px) {
+  #home-publications .pub-entry {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  #home-publications .pub-entry > .rise-link {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  #home-publications .pub-entry {
+    display: grid;
+    grid-template-columns: clamp(64px, 17vw, 104px) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 14px;
+  }
+
+  #home-publications .pub-entry > :not(.featured-paper-image) {
+    grid-column: 2;
+  }
+
+  #home-publications .pub-entry h3 {
+    font-size: clamp(16px, 2.4vw, 20px);
+  }
+
+  #home-publications .featured-paper-image {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    margin-bottom: 0;
+    padding: 4px;
+  }
+
+  #home-publications .pub-entry > .rise-link {
+    justify-self: start;
+  }
+}
+
+.research-support .rc-funding-note { width: 100%; max-width: none; }
+.rm-detail h2 { font-weight: 700; }
+
+/* A soft hover highlight for the Our Lab mission cards. */
+@media (hover: hover) {
+  #mission .text-card { transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+  #mission .text-card:hover { background-color: #f2f6ef; border-color: #a0ca80; box-shadow: 0 0 0 1px rgba(160, 202, 128, .45), 0 0 28px rgba(160, 202, 128, .52), 0 10px 26px rgba(18, 76, 64, .12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #mission .text-card { transition: none; }
+}
+
+/* Keep the longer lab name readable beside the mobile menu control. */
+@media (max-width: 991.98px) {
+  .rise-nav .navbar-brand { max-width: calc(100% - 58px); min-width: 0; }
+  .rise-nav .rise-brand-name { min-width: 0; white-space: normal; }
+}
+/* Keep the wordmark and menu toggle on one row on phones. */
+@media (max-width: 767.98px) {
+  .rise-nav {
+    padding-block: 10px !important;
+  }
+
+  .rise-nav > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  .rise-nav .navbar-brand {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    min-width: 0;
+    gap: 10px;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .rise-nav .rise-logo-wrap,
+  .rise-nav .rise-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .rise-nav .home-brand-title {
+    color: #18453b;
+    font-size: clamp(15px, 2.55vw, 18px);
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+
+  .rise-nav .navbar-toggler {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    color: #18453b;
+    background: #fff;
+    border: 1px solid #c5d7ca;
+    border-radius: 6px;
+  }
+
+  .rise-nav .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .rise-nav .navbar-toggler:focus-visible {
+    outline: 2px solid #18453b;
+    outline-offset: 3px;
+  }
+
+  .rise-nav .navbar-toggler-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rise-nav .navbar-collapse {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+
+  .rise-nav .navbar-collapse.show {
+    padding-block: 12px 6px;
+  }
+
+  .rise-nav .navbar-collapse .nav-link {
+    padding-inline: 0 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .rise-nav .home-brand-expansion {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1550px) {
+  .rise-nav .nav-link { padding-inline: 9px !important; }
+}
+
+/* Mobile: leave room for wrapping carousel text and easier touch targets. */
+@media (max-width: 767px) {
+  .home-page .rise-hero .carousel-indicators [data-bs-target] {
+    border: solid transparent;
+    border-width: 21px 6px;
+    background-clip: content-box;
+    margin-inline: 0;
+  }
+  #news-topic-filter button,
+  #publication-filters-v2 .pub-filter-row button { min-height: 44px; white-space: normal; }
+}

@@ -1,0 +1,160 @@
+/* Keep the complete list readable if JavaScript is unavailable. */
+
+.research-support:not(.rc-ready) .rise-eyebrow {
+  font-size: 0 !important;
+}
+
+.research-support:not(.rc-ready) .rise-eyebrow::after {
+  content: 'Selected Collaborators';
+  font-size: 13px;
+}
+
+.research-support:not(.rc-ready) .support-copy a {
+  display: none !important;
+}
+
+.research-support:not(.rc-ready) .support-name {
+  font-size: 0 !important;
+}
+
+.research-support:not(.rc-ready) .support-name::after {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.research-support:not(.rc-ready) .support-item:nth-child(1) .support-name::after {
+  content: 'ARPA-E';
+}
+
+.research-support:not(.rc-ready) .support-item:nth-child(2) .support-name::after {
+  content: 'NASA / Michigan Space Grant Consortium';
+}
+
+.research-support:not(.rc-ready) .support-item:nth-child(3) .support-name::after {
+  content: 'U.S. Department of Transportation';
+}
+
+.research-support:not(.rc-ready) .support-items::after {
+  content: 'U.S. Department of Energy (DOE)\A Los Alamos National Laboratory\A National Energy Technology Laboratory\A National Institute of Standards and Technology';
+  display: block;
+  flex-basis: 100%;
+  grid-column: 1 / -1;
+  white-space: pre-line;
+  color: #edf4ea;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Seven collaborators: four across, then a centered row of three on desktop. */
+
+.research-support .rc-grid {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.research-support .rc-card {
+  flex: 0 1 calc((100% - 54px) / 4);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.research-support .rc-mark {
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.research-support .rc-mark img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.research-support .rc-wordmark {
+  color: #164b3d;
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: .02em;
+}
+
+.research-support .rc-name {
+  max-width: 29ch;
+  color: #eff5ec;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .research-support .rc-card {
+    flex-basis: calc((100% - 36px) / 3);
+  }
+}
+
+@media (max-width: 580px) {
+  .research-support .rc-grid {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 580px) {
+  .research-support .rc-card {
+    flex-basis: calc((100% - 14px) / 2);
+  }
+}
+
+@media (max-width: 580px) {
+  .research-support .rc-mark {
+    height: 70px;
+  }
+}
+
+@media (max-width: 580px) {
+  .research-support .rc-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 340px) {
+  .research-support .rc-card {
+    flex-basis: 100%;
+  }
+}
+
+/* A consistent three-by-two desktop grid with room for official marks. */
+@media (min-width: 901px) {
+  .research-support .rc-grid.rc-six .rc-card { flex-basis: calc((100% - 36px) / 3); }
+}
+.research-support .rc-grid.rc-six .rc-mark { padding: 14px 20px; }
+.research-support .rc-grid.rc-six .rc-netl { padding: 8px 14px; }
+.research-support .rc-mark a { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.research-support .rc-mark a img { max-width: 100%; max-height: 100%; }
+.research-support .rc-name a { color: inherit; }
+.research-support .rc-funding-note { max-width: 76rem; margin: 24px 0 0; color: #e6eee9; font-size: 14px; line-height: 1.55; }
+.research-support .rc-funding-note p { margin: 0 0 8px; }
+
+
+/* Four research sponsors and collaborators. */
+.research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 54px) / 4); }
+.research-support .rc-grid.rc-four .rc-mark { padding: 14px 20px; }
+.research-support .rc-grid.rc-four .rc-netl { padding: 8px 14px; }
+@media (max-width: 900px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 18px) / 2); } }
+@media (max-width: 580px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 14px) / 2); } }
+@media (max-width: 340px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: 100%; } }
