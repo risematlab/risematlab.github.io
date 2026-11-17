@@ -1,3 +1,25 @@
+/* Extend each story link over its card without adding duplicate links. */
+#stories .news-card {
+  position: relative;
+}
+
+#stories .news-card-body > a.rise-link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+}
+
+#stories .news-card:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#stories .news-card:focus-within {
+  outline: 2px solid var(--rise-green);
+  outline-offset: 3px;
+}
+
 /* Compact News landing and archive controls for phones. */
 .news-mobile-controls,
 .news-mobile-title {

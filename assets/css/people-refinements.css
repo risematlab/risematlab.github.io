@@ -113,8 +113,15 @@
   }
 }
 
+.pi-name {
+  margin-bottom: 6px;
+}
+
 .pi-credentials {
-  white-space: nowrap;
+  margin: 0;
+  color: var(--rise-muted);
+  font-size: clamp(15px, 1.5vw, 20px);
+  font-weight: 600;
 }
 
 #community .people-group-heading {
@@ -171,17 +178,52 @@
   margin: 0 0 9px;
 }
 
-.person-card-body > :is(.person-research,.alumni-outcome) {
+.person-card-body > .person-research {
   margin: 0 0 6px;
   line-height: 1.55;
 }
 
-.person-card-body .alumni-outcome {
-  color: var(--rise-muted);
+.alumni-card-heading > h4 {
+  margin: 0;
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.2;
+  text-wrap: balance;
 }
 
-.person-card-body .alumni-outcome strong {
+.alumni-card-heading > p {
+  margin: 5px 0 0;
+  color: var(--rise-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.alumni-details {
+  margin: 14px 0 6px;
+  padding-top: 11px;
+  border-top: 1px solid #dbe5dd;
+  color: var(--rise-muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.alumni-details dt {
+  margin: 0 0 4px;
+  color: var(--rise-green);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.alumni-details dd {
+  margin: 0;
+}
+
+.alumni-details dd + dt {
+  margin-top: 12px;
+}
+
+.alumni-details strong {
   color: var(--rise-ink);
+  font-weight: 650;
 }
 
 .person-profile-link {
@@ -220,10 +262,12 @@
   color: var(--rise-muted);
 }
 
-.alumni-directory > .alumni-group {
-  display: flex;
-  grid-column: 1 / -1;
-  flex-direction: column;
+.alumni-directory {
+  display: grid;
+  gap: 28px;
+}
+
+.alumni-group {
   min-width: 0;
   padding-top: 13px;
   border-top: 1px solid #dbe5dd;
@@ -235,8 +279,17 @@
   letter-spacing: -.2px;
 }
 
-.alumni-group > .people-student-grid {
-  flex: 1;
+.alumni-brief-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alumni-brief-list > li {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dbe5dd;
+  border-radius: 4px;
 }
 
 .people-gallery figure {
@@ -264,20 +317,8 @@
 }
 
 @media (min-width: 992px) {
-  .alumni-directory > .alumni-group:first-child {
-    grid-column: 1;
-  }
-
-  .alumni-directory > .alumni-group:nth-child(2) {
-    grid-column: 2 / span 2;
-  }
-
-  .alumni-directory > .alumni-group:first-child > .people-student-grid {
-    grid-template-columns: minmax(0,1fr);
-  }
-
-  .alumni-directory > .alumni-group:nth-child(2) > .people-student-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
+  .alumni-group > .people-student-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -294,6 +335,21 @@
     align-items: start;
     gap: 12px;
     padding: 14px;
+  }
+
+  #alumni .person-card {
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  #alumni .alumni-details,
+  #alumni .person-profile-link {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  #alumni .person-profile-link {
+    justify-self: start;
   }
 
   .person-card-portrait {
@@ -328,7 +384,7 @@
     letter-spacing: 0;
   }
 
-  .person-card-body > :is(.person-research,.alumni-outcome) {
+  .person-card-body > .person-research {
     margin-bottom: 0;
     font-size: 14px;
     line-height: 1.45;

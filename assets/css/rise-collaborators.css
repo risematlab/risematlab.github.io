@@ -158,3 +158,150 @@
 @media (max-width: 900px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 18px) / 2); } }
 @media (max-width: 580px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 14px) / 2); } }
 @media (max-width: 340px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: 100%; } }
+
+.research-support .rc-role {
+  display: block;
+  margin-top: 4px;
+  color: #c8ddd0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.research-support .rc-acknowledgment {
+  margin: 0 auto;
+  color: #e6eee9;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.research-support .rc-acknowledgments {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px clamp(14px, 2vw, 24px);
+  width: min(100%, 720px);
+  margin: 16px auto 0;
+}
+
+.research-support .rc-acknowledgments .rc-name {
+  max-width: none;
+  text-wrap: balance;
+}
+
+.research-support .rc-acknowledgments .rc-mark {
+  width: min(100%, 220px);
+  padding: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .research-support .rc-acknowledgments {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.research-support .rc-sponsor-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.research-support .rc-sponsor-link:is(:hover, :focus-visible) .rc-name {
+  color: #d6ef9e;
+}
+
+.research-support .rc-sponsor-link:hover .rc-mark {
+  box-shadow: 0 0 0 2px #b3d17d;
+}
+
+.rise-site-footer > .rise-section.rise-footer {
+  padding-bottom: clamp(26px, 4vw, 44px);
+}
+
+.rise-sponsor-footer {
+  padding: clamp(24px, 4vw, 40px) 0 18px;
+  background: #fff;
+  color: #18453b;
+}
+
+.rise-sponsor-footer .research-support {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.rise-sponsor-footer .rc-sponsor-heading {
+  margin: 0 0 6px;
+  font-size: clamp(15px, 1.25vw, 17px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .05em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rise-sponsor-footer .rc-acknowledgment {
+  color: #36564a;
+}
+
+.rise-sponsor-footer .rc-name {
+  color: #18453b;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.rise-sponsor-footer .rc-mark {
+  border: 1px solid #dfe7e2;
+}
+
+.rise-sponsor-footer .rc-mark img[src$="/news-linkedin-35-01.jpg"] {
+  max-width: min(100%, 172px);
+}
+
+/* The NETL artwork is centered inside a wide blank margin in the source image. */
+.rise-sponsor-footer .rc-mark img[src$="/netl-official.png"] {
+  transform: scale(1.22);
+}
+
+@media (max-width: 580px) {
+  .rise-sponsor-footer .rc-name {
+    font-size: 14px;
+  }
+}
+
+.rise-sponsor-footer .rc-sponsor-link:is(:hover, :focus-visible) .rc-name {
+  color: #286050;
+}
+
+.rise-sponsor-footer .rc-sponsor-link:hover .rc-mark {
+  box-shadow: 0 0 0 2px #c5d8cc;
+}
+
+.rise-sponsor-footer .rc-sponsor-link:focus-visible {
+  outline-color: #286050;
+}
+
+.rise-sponsor-footer .rise-copyright {
+  margin: 26px 0 0;
+  padding-top: 14px;
+  border-color: #dfe7e2;
+  color: #456258;
+}
+
+@media (min-width: 992px) {
+  .rise-sponsor-footer .rc-acknowledgments {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 100%;
+    column-gap: clamp(14px, 1.5vw, 20px);
+  }
+
+  .rise-sponsor-footer .rc-acknowledgments .rc-mark {
+    width: 100%;
+    height: 84px;
+  }
+}

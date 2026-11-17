@@ -97,10 +97,10 @@
 .home-page .rise-hero .rise-actions .btn { font-size: 14px; }
 .home-page .rise-hero .carousel-indicators { margin-left: var(--hero-copy-inset); }
 
-.rise-section-hero-publications { --hero-focus: 50% 44%; }
+.rise-section-hero-publications { --hero-focus: 50% 5%; }
 .rise-section-hero-news { --hero-focus: 50% 55%; }
 .rise-section-hero-media { --hero-focus: 50% 60%; }
-.rise-section-hero-about { --hero-focus: 50% 63%; }
+.rise-section-hero-people { --hero-focus: 50% 63%; }
 .rise-section-hero-join { --hero-focus: 50% 24%; }
 .rise-section-hero-about .rise-name-nowrap { white-space: nowrap; }
 .home-page .rise-hero .carousel-item:nth-child(1) { --hero-focus: 50% 30%; }
@@ -138,6 +138,13 @@
   padding-bottom: 28px;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .rise-section-hero-publications .rise-section-hero-image {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
 @media (min-width: 992px) {
   .rise-site .rise-section-hero {
     --hero-photo-width: min(60%, 1320px);
@@ -155,7 +162,11 @@
     padding-bottom: 32px;
   }
 
-  .rise-section-hero-about {
+  .rise-site .rise-section-hero-publications {
+    --hero-photo-width: min(60%, calc(var(--hero-photo-height) * 1.85));
+  }
+
+  .rise-section-hero-people {
     --hero-focus: 50% 67%;
   }
 }

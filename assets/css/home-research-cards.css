@@ -1,5 +1,4 @@
 /* Scoped to the home-page research section. */
-#home-research .home-section-header > .rise-intro { max-width: none; text-wrap: pretty; }
 #home-research .rise-grid { align-items: stretch; }
 #home-research .rise-card { display: flex; flex-direction: column; min-width: 0; }
 #home-research .rise-card-image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }

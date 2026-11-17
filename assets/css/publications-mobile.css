@@ -22,9 +22,10 @@
     position: static;
     grid-area: 1 / 2;
     width: 100% !important;
-    height: clamp(111px, 33vw, 162px) !important;
+    height: auto !important;
     border-radius: 5px;
-    object-position: 51% 50%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .rise-site .rise-section-hero-publications > .rise-wrap {

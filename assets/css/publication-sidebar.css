@@ -18,6 +18,21 @@
   padding-inline: 0;
 }
 
+.publication-title-link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.publication-title-link:is(:hover, :focus-visible) {
+  color: inherit;
+  font-weight: 700;
+}
+
+#publication-list :is(.pub-entry, .citation-entry) {
+  border-top: 0;
+}
+
 #publication-filters-v2 .publication-clear {
   display: inline-block;
   padding: 0;

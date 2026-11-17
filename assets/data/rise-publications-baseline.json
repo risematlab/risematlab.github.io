@@ -9,15 +9,49 @@
     "extreme": "<li><a href=\"https://doi.org/10.1061/JMCEE7.MTENG-22054\">Effects of Desert Sands on the Fresh and Hardened Properties of Cement-Based Materials ↗</a><span>2026 · Journal of Materials in Civil Engineering</span></li>\n<li><a href=\"https://doi.org/10.1038/s44453-026-00047-8\">Assessing the cementitious reactivity of lunar and Martian regolith simulants for extraterrestrial construction ↗</a><span>2026 · npj Space Exploration</span></li>\n<li><a href=\"https://doi.org/10.1021/acsomega.6c02054\">AI-Aided Design of Carbonated Ductile Well Cement for Enhanced Recovery ↗</a><span>2026 · ACS Omega</span></li>"
   },
   "lastSectionHashes": {
-    "low": "a2bb21ac519d3f82c1c4",
-    "composites": "5da01f26ab17efe06ada",
+    "low": "2867fce9d3727647a7f2",
+    "composites": "1a751c379e4e52ee3ab0",
     "environment": "b43e8d8b867a1645af23",
-    "durability": "18bce695680cbbf6367f",
-    "data": "3f4960b5f8e94bb45d1b",
-    "extreme": "36a6c644b13d374ff2f9"
+    "durability": "8e7d4f87586b5d7d6fd7",
+    "data": "56150d8ba1da514a9c8d",
+    "extreme": "d5268b66026a567813c2"
   },
   "lastManagedHashes": {
-    "aa4cb856-9545-45ff-939d-638fbd34c887": "61addb3392bc322a3810"
+    "aa4cb856-9545-45ff-939d-638fbd34c887": "f4ace1ac38fbbdd0051f",
+    "c3-earthquake-resistance-2025": "b5206eb163b209d36992",
+    "lpsc-regolith-grain-shape-2023": "579b25f7783b938209be",
+    "ncpp-bridge-deck-sealers-report-2023": "bc136d9a9e7a3ad4bb82"
   },
-  "lastLegacyHashes": {}
+  "lastLegacyHashes": {
+    "legacy-86c877cb8689a272452a": "39d2a1a6004a8e791734",
+    "legacy-a88b9f620c512b9431b9": "559a083231e216108cc7",
+    "legacy-a78a53b8adde48e64a1e": "f8c17813c4fb692f8fad",
+    "legacy-51c4eef2498646c50b9a": "53aa71025a99929b4b30"
+  },
+  "legacyOrigins": {
+    "legacy-86c877cb8689a272452a": {
+      "url": "https://doi.org/10.1061/JMCEE7.MTENG-22054",
+      "title": "Effects of Desert Sands on the Fresh and Hardened Properties of Cement-Based Materials",
+      "authors": "P. Melo, B. Byers, Q. Jin and A. Paul",
+      "citation": "Journal of Materials in Civil Engineering"
+    },
+    "legacy-a88b9f620c512b9431b9": {
+      "url": "https://doi.org/10.1038/s44453-026-00047-8",
+      "title": "Assessing the cementitious reactivity of lunar and Martian regolith simulants for extraterrestrial construction",
+      "authors": "M. Leon-Miquel, B. S. Byers and Q. Jin",
+      "citation": "npj Space Exploration"
+    },
+    "legacy-a78a53b8adde48e64a1e": {
+      "url": "https://doi.org/10.1021/acsomega.6c02054",
+      "title": "AI-Aided Design of Carbonated Ductile Well Cement for Enhanced Recovery",
+      "authors": "Y. Li, D. Aparicio, T. Wang, B. Byers, F. Shi, D. Crandall, G. Liu and Q. Jin",
+      "citation": "ACS Omega"
+    },
+    "legacy-51c4eef2498646c50b9a": {
+      "url": "https://doi.org/10.1186/s43065-023-00091-8",
+      "title": "Crack sealers for the preservation of concrete bridge decks: A synthesis of a national survey and literature review",
+      "authors": "X. Ni, M. Leon-Miquel, Q. R. Greiner, A. Paul and Q. Jin",
+      "citation": "Journal of Infrastructure Preservation and Resilience"
+    }
+  }
 }
