@@ -113,7 +113,6 @@
 }
 
 .home-page .rise-hero .rise-hero-description {
-  max-inline-size: 54ch;
   min-block-size: var(--hero-lede-lines);
   font-size: clamp(1rem, 1.25vw, 1.1875rem);
   text-wrap: pretty;

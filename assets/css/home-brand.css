@@ -303,45 +303,59 @@
   .rise-nav :is(.home-brand-title, .home-brand-expansion) { text-wrap: balance; }
 }
 
-/* Keep the longer lab name readable beside the mobile menu control. */
-@media (max-width: 767.98px) {
-  .rise-nav .navbar-brand { max-width: calc(100% - 58px); min-width: 0; }
-  .rise-nav .rise-brand-name { min-width: 0; white-space: normal; }
-}
-/* Keep the wordmark and menu toggle on one row on phones. */
+/* Fit both wordmark lines in the space between the logo and menu button. */
 @media (max-width: 767.98px) {
   .rise-nav {
     padding-block: 10px !important;
   }
 
   .rise-nav > .container {
+    --brand-logo-size: clamp(32px, calc(20vw - 32px), 44px);
+    --brand-gap: clamp(6px, 1.8vw, 10px);
     display: grid;
     grid-template-columns: minmax(0, 1fr) 44px;
     align-items: center;
-    column-gap: 12px;
+    column-gap: var(--brand-gap);
+    padding-inline: clamp(8px, calc(11.25vw - 28px), max(24px, 4vw));
   }
 
   .rise-nav .navbar-brand {
     margin: 0;
     padding: 0;
-    max-width: none;
     min-width: 0;
-    gap: 10px;
+    gap: var(--brand-gap);
     white-space: normal;
     text-align: left;
   }
 
   .rise-nav .rise-logo-wrap,
   .rise-nav .rise-logo {
-    width: 44px;
-    height: 44px;
+    width: var(--brand-logo-size);
+    height: var(--brand-logo-size);
+  }
+
+  .rise-nav .rise-brand-name {
+    flex: 1 1 0;
+    min-width: 0;
+    container-type: inline-size;
+    gap: 2px;
+    white-space: normal;
+  }
+
+  .rise-nav :is(.home-brand-expansion, .home-brand-title) {
+    letter-spacing: -.02em;
+    text-wrap: wrap;
+  }
+
+  .rise-nav .home-brand-expansion {
+    font-size: clamp(.5625rem, 4.1cqi, .75rem);
+    font-weight: 550;
+    line-height: 1.25;
   }
 
   .rise-nav .home-brand-title {
-    color: #18453b;
-    font-size: clamp(15px, 2.55vw, 18px);
-    line-height: 1.18;
-    text-wrap: balance;
+    font-size: clamp(.6875rem, 5.3cqi, 1.125rem);
+    line-height: 1.2;
   }
 
   .rise-nav .navbar-toggler {
@@ -386,13 +400,6 @@
   }
 }
 
-@media (max-width: 575.98px) {
-  .rise-nav .home-brand-expansion {
-    font-size: clamp(10px, 2.8vw, 12px);
-    line-height: 1.25;
-    text-wrap: balance;
-  }
-}
 
 @media (min-width: 1400px) and (max-width: 1550px) {
   .rise-nav .nav-link { padding-inline: 9px !important; }
@@ -436,6 +443,11 @@
   font-size: 15px;
 }
 
+#home-research .home-card-text-link > p:not(.rise-eyebrow),
+#home-news .home-card-text-link > p:not(.rise-eyebrow) {
+  text-wrap: pretty;
+}
+
 #home-research .home-card-text-link > .rise-eyebrow {
   color: var(--rise-green);
 }
@@ -443,5 +455,12 @@
 @media (max-width: 1199.98px) {
   #home-publications .pub-entry:has(> .home-card-text-link) > .home-image-link {
     grid-row: 1 / span 2;
+  }
+}
+
+@media (max-width: 359.98px) {
+  #home-publications .pub-entry {
+    grid-template-columns: clamp(64px, 21vw, 88px) minmax(0, 1fr);
+    column-gap: 12px;
   }
 }

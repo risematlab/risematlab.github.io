@@ -27,7 +27,7 @@
 }
 
 .join-pathways-intro .rise-intro {
-  max-inline-size: 72ch;
+  text-wrap: pretty;
   margin: 0;
 }
 

@@ -1,6 +1,5 @@
 .news-detail {
-  --story-reading-width: 43rem;
-  --story-gallery-width: 55rem;
+  --story-content-width: 55rem;
 }
 
 .news-detail .rise-page-intro {
@@ -18,7 +17,7 @@
 .news-detail .rise-page-intro .rise-wrap > *,
 .news-detail .story-content > :is(p, h2, .story-actions),
 .news-detail #story .story-feature + * {
-  max-width: var(--story-reading-width);
+  max-width: var(--story-content-width);
   margin-inline: auto;
 }
 
@@ -48,7 +47,7 @@
 }
 
 .news-detail #story .rise-section-title {
-  max-width: var(--story-reading-width);
+  max-width: var(--story-content-width);
   margin-inline: auto;
   margin-bottom: 1.25rem;
   font-size: clamp(1.45rem, 3vw, 2rem);
@@ -96,7 +95,7 @@
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: var(--story-media-gap);
-  max-width: var(--story-gallery-width);
+  max-width: var(--story-content-width);
   margin: clamp(22px, 3vw, 38px) auto;
 }
 

@@ -1,57 +1,7 @@
-/* Compact Publications masthead and filters for phone widths. */
+/* Compact Publications filters for phone widths. */
 .publication-mobile-citation-note { display: none; }
 
 @media (max-width: 767.98px) {
-  .rise-site .rise-section-hero-publications {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(94px, 29vw, 156px);
-    align-items: center;
-    gap: 16px;
-    min-height: auto;
-    padding: 26px var(--hero-copy-inset);
-    border-bottom: 1px solid #dbe6dc;
-    background: #edf3ed;
-    color: #16392f;
-  }
-
-  .rise-section-hero-publications::after {
-    display: none;
-  }
-
-  .rise-section-hero-publications .rise-section-hero-image {
-    position: static;
-    grid-area: 1 / 2;
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 5px;
-    object-fit: contain;
-    object-position: center;
-  }
-
-  .rise-site .rise-section-hero-publications > .rise-wrap {
-    grid-area: 1 / 1;
-    width: 100%;
-    padding: 0;
-  }
-
-  .rise-section-hero-publications .rise-eyebrow {
-    margin: 0 0 7px;
-    color: #124c40;
-  }
-
-  .rise-section-hero-publications .rise-page-title {
-    margin: 0 0 9px;
-    color: #16392f;
-    font-size: clamp(29px, 8vw, 42px);
-  }
-
-  .rise-section-hero-publications .rise-page-lede {
-    margin: 0;
-    color: #3f5b50;
-    font-size: 15px;
-    line-height: 1.45;
-  }
-
   #publication-list.publication-mobile-ready {
     padding-block: 24px;
   }
@@ -73,7 +23,7 @@
     margin-top: 15px;
   }
 
-  #publication-list.publication-mobile-ready .publication-mobile-citation-note {
+  #publication-list.publication-mobile-ready:has(#journals:not([hidden])) .publication-mobile-citation-note {
     display: block;
   }
 
