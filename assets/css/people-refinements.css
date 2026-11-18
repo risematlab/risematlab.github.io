@@ -227,14 +227,18 @@
 }
 
 .person-profile-link {
-  display: inline-flex;
-  align-items: center;
   align-self: flex-start;
-  gap: 5px;
-  min-height: 44px;
   margin-top: auto;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+}
+
+.rise-site a.rise-arrow-link.rise-profile-action {
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  #alumni .person-card {
+    padding-bottom: 20px;
+  }
 }
 
 .person-details {

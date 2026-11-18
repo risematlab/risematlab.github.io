@@ -20,18 +20,13 @@
     const action = card.querySelector('[data-home-image-action][href]') || card.querySelector('a.rise-link[href]');
     if (!action) continue;
 
-    const actionText = action.lastChild;
-    if (card.matches('#home-publications .pub-entry') && actionText?.nodeType === Node.TEXT_NODE) {
-      actionText.nodeValue = actionText.nodeValue.replace(/\u2197[\uFE0E\uFE0F]?\s*$/, '\u2192');
-    }
-
     const photo = card.querySelector('img');
     if (!photo) continue;
 
     const heading = card.querySelector('h3');
     if (!photo.closest('a')) {
       const label = action.getAttribute('aria-label') || heading?.textContent.trim()
-        || action.textContent.trim().replace(/\s*\u2192$/, '');
+        || action.textContent.trim().replace(/\s*[\u2192\u2197][\uFE0E\uFE0F]?$/, '');
       const imageLink = createLink(action, 'home-image-link', label);
       photo.before(imageLink);
       imageLink.append(photo);

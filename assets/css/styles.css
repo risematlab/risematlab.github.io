@@ -20,8 +20,93 @@ html {
   overflow-x: clip;
 }
 
+@font-face {
+  font-family: "RISE Link Arrows";
+  src: url("../fonts/rise-link-arrows.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+2190, U+2192, U+2197, U+E000-E002;
+}
+
 .rise-site a {
+  font-family: "RISE Link Arrows", "Segoe UI", Arial, sans-serif;
+  font-variant-emoji: text;
   text-underline-offset: 5px;
+}
+
+.rise-site a.rise-arrow-link {
+  display: inline-flex;
+  align-items: baseline;
+  min-height: 44px;
+  column-gap: 0;
+  text-decoration: none !important;
+}
+
+.rise-site a.rise-arrow-link.rise-link {
+  padding-block: 12px;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.rise-site .rm-papers a.rise-arrow-link {
+  display: block;
+  min-height: 0;
+}
+
+.rise-site a.rise-arrow-link > .rise-link-label {
+  display: inline;
+  min-width: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.rise-site a.rise-arrow-link:not(.btn, .rise-profile-action) > .rise-link-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rise-site .rm-papers a.rise-arrow-link:not(:hover, :focus-visible) > .rise-link-label {
+  text-decoration: none;
+}
+
+.rise-site a.rise-profile-action:is(:hover, :focus-visible) > .rise-link-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rise-site a.rise-arrow-link > .rise-link-arrow {
+  display: inline;
+  flex: none;
+  margin: 0;
+  margin-inline-start: 5px;
+  color: inherit;
+  font: 400 1em/1 "RISE Link Arrows";
+  font-synthesis: none;
+  vertical-align: -.05em;
+}
+
+.rise-site a.rise-arrow-link > .rise-link-arrow[data-direction="left"] {
+  margin-inline: 0 5px;
+}
+
+.rise-link-arrow::before {
+  content: "\e002";
+}
+
+.rise-link-arrow[data-direction="left"]::before {
+  content: "\e000";
+}
+
+.rise-link-arrow[data-direction="right"]::before {
+  content: "\e001";
+}
+
+.rise-site .rm-lane:not(:last-child)::after {
+  content: "\e001";
+  font-family: "RISE Link Arrows";
+  font-synthesis: none;
 }
 
 .rise-site a:focus-visible, .rise-site button:focus-visible {
