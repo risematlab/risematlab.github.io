@@ -1,4 +1,4 @@
-/* Keep the homepage's research previews in Research Area order. */
+/* Keep the homepage's research previews in the same order as the Research Areas page. */
 (async () => {
   'use strict';
 
@@ -30,7 +30,7 @@
         link.setAttribute('href', 'research.html' + hash);
         link.setAttribute('aria-label', link.classList.contains('home-card-text-link')
           ? title
-          : 'Explore research on ' + title);
+          : 'Explore this research area: ' + title);
       }
     }
 
