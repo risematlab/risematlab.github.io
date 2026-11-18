@@ -78,6 +78,15 @@
   text-wrap: pretty;
 }
 
+#publication-list .pub-entry:has(> .rm-cover-label) > h3 {
+  display: inline-block;
+  max-width: 100%;
+}
+
+#publication-list .pub-entry > .rm-cover-label {
+  margin: 0 0 6px;
+}
+
 #publication-list :is(.pub-authors, .pub-journal, .citation-copy) {
   max-width: none;
   margin: 0 0 4px;
@@ -142,7 +151,6 @@
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid #dbe6dc;
   border-radius: 4px;
 }
 

@@ -1,7 +1,10 @@
-@media (max-width: 360px) {
-  .rise-section-hero-join .rise-page-title {
-    font-size: clamp(1.5rem, 9vw, 2rem);
-  }
+.rise-section-hero-join > .rise-wrap {
+  container-type: inline-size;
+}
+
+.rise-section-hero-join .rise-page-title {
+  font-size: clamp(1.5rem, 8.75cqi, clamp(2rem, 3.3vw, 3rem));
+  text-wrap: wrap;
 }
 
 #opportunities .rise-section-title {
