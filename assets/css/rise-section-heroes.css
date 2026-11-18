@@ -147,7 +147,7 @@
 .rise-section-hero-join { --hero-focus: 50% 24%; }
 .rise-section-hero-about .rise-name-nowrap { white-space: nowrap; }
 .home-page .rise-hero .carousel-item:nth-child(1) { --hero-focus: 50% 30%; }
-.home-page .rise-hero .carousel-item:nth-child(2) { --hero-focus: 50% 25%; }
+.home-page .rise-hero .carousel-item:nth-child(2) { --hero-focus: 50% 65%; }
 
 @media (max-width: 360px) {
   .rise-site .rise-section-hero { --hero-title-lines: 3lh; }
