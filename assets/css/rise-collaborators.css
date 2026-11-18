@@ -1,224 +1,3 @@
-/* Keep the complete list readable if JavaScript is unavailable. */
-
-.research-support:not(.rc-ready) .rise-eyebrow {
-  font-size: 0 !important;
-}
-
-.research-support:not(.rc-ready) .rise-eyebrow::after {
-  content: 'Selected Collaborators';
-  font-size: 13px;
-}
-
-.research-support:not(.rc-ready) .support-copy a {
-  display: none !important;
-}
-
-.research-support:not(.rc-ready) .support-name {
-  font-size: 0 !important;
-}
-
-.research-support:not(.rc-ready) .support-name::after {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.research-support:not(.rc-ready) .support-item:nth-child(1) .support-name::after {
-  content: 'ARPA-E';
-}
-
-.research-support:not(.rc-ready) .support-item:nth-child(2) .support-name::after {
-  content: 'NASA / Michigan Space Grant Consortium';
-}
-
-.research-support:not(.rc-ready) .support-item:nth-child(3) .support-name::after {
-  content: 'U.S. Department of Transportation';
-}
-
-.research-support:not(.rc-ready) .support-items::after {
-  content: 'U.S. Department of Energy (DOE)\A Los Alamos National Laboratory\A National Energy Technology Laboratory\A National Institute of Standards and Technology';
-  display: block;
-  flex-basis: 100%;
-  grid-column: 1 / -1;
-  white-space: pre-line;
-  color: #edf4ea;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/* Seven collaborators: four across, then a centered row of three on desktop. */
-
-.research-support .rc-grid {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
-  margin: 22px 0 0;
-  padding: 0;
-}
-
-.research-support .rc-card {
-  flex: 0 1 calc((100% - 54px) / 4);
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
-}
-
-.research-support .rc-mark {
-  width: 100%;
-  height: 80px;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.research-support .rc-mark img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.research-support .rc-wordmark {
-  color: #164b3d;
-  font-size: 26px;
-  font-weight: 750;
-  letter-spacing: .02em;
-}
-
-.research-support .rc-name {
-  max-width: 29ch;
-  color: #eff5ec;
-  font-size: 15px;
-  line-height: 1.35;
-  font-weight: 600;
-}
-
-@media (max-width: 900px) {
-  .research-support .rc-card {
-    flex-basis: calc((100% - 36px) / 3);
-  }
-}
-
-@media (max-width: 580px) {
-  .research-support .rc-grid {
-    gap: 14px;
-  }
-}
-
-@media (max-width: 580px) {
-  .research-support .rc-card {
-    flex-basis: calc((100% - 14px) / 2);
-  }
-}
-
-@media (max-width: 580px) {
-  .research-support .rc-mark {
-    height: 70px;
-  }
-}
-
-@media (max-width: 580px) {
-  .research-support .rc-name {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 340px) {
-  .research-support .rc-card {
-    flex-basis: 100%;
-  }
-}
-
-/* A consistent three-by-two desktop grid with room for official marks. */
-@media (min-width: 901px) {
-  .research-support .rc-grid.rc-six .rc-card { flex-basis: calc((100% - 36px) / 3); }
-}
-.research-support .rc-grid.rc-six .rc-mark { padding: 14px 20px; }
-.research-support .rc-grid.rc-six .rc-netl { padding: 8px 14px; }
-.research-support .rc-mark a { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
-.research-support .rc-mark a img { max-width: 100%; max-height: 100%; }
-.research-support .rc-name a { color: inherit; }
-.research-support .rc-funding-note { max-width: 76rem; margin: 24px 0 0; color: #e6eee9; font-size: 14px; line-height: 1.55; }
-.research-support .rc-funding-note p { margin: 0 0 8px; }
-
-
-/* Four research sponsors and collaborators. */
-.research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 54px) / 4); }
-.research-support .rc-grid.rc-four .rc-mark { padding: 14px 20px; }
-.research-support .rc-grid.rc-four .rc-netl { padding: 8px 14px; }
-@media (max-width: 900px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 18px) / 2); } }
-@media (max-width: 580px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: calc((100% - 14px) / 2); } }
-@media (max-width: 340px) { .research-support .rc-grid.rc-four .rc-card { flex-basis: 100%; } }
-
-.research-support .rc-role {
-  display: block;
-  margin-top: 4px;
-  color: #c8ddd0;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.research-support .rc-acknowledgment {
-  margin: 0 auto;
-  color: #e6eee9;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.research-support .rc-acknowledgments {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px clamp(14px, 2vw, 24px);
-  width: min(100%, 720px);
-  margin: 16px auto 0;
-}
-
-.research-support .rc-acknowledgments .rc-name {
-  max-width: none;
-  text-wrap: balance;
-}
-
-.research-support .rc-acknowledgments .rc-mark {
-  width: min(100%, 220px);
-  padding: 8px;
-  overflow: hidden;
-}
-
-@media (min-width: 640px) {
-  .research-support .rc-acknowledgments {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.research-support .rc-sponsor-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  color: inherit;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.research-support .rc-sponsor-link:is(:hover, :focus-visible) .rc-name {
-  color: #d6ef9e;
-}
-
-.research-support .rc-sponsor-link:hover .rc-mark {
-  box-shadow: 0 0 0 2px #b3d17d;
-}
-
 .rise-site-footer > .rise-section.rise-footer {
   padding-bottom: clamp(26px, 4vw, 44px);
 }
@@ -230,13 +9,16 @@
 }
 
 .rise-sponsor-footer .research-support {
+  --rc-gap: clamp(16px, 2vw, 26px);
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
 .rise-sponsor-footer .rc-sponsor-heading {
-  margin: 0 0 6px;
+  margin: 0 0 20px;
+  padding-block: 6px;
   font-size: clamp(15px, 1.25vw, 17px);
   font-weight: 700;
   line-height: 1.4;
@@ -245,45 +27,61 @@
   text-transform: uppercase;
 }
 
-.rise-sponsor-footer .rc-acknowledgment {
-  color: #36564a;
+.rise-sponsor-footer .rc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--rc-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.rise-sponsor-footer .rc-name {
-  color: #18453b;
-  font-size: 16px;
-  line-height: 1.45;
+.rise-sponsor-footer .rc-card {
+  flex: 1 1 138px;
+  max-width: 240px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
 }
 
 .rise-sponsor-footer .rc-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: clamp(100px, 9vw, 122px);
+  padding: 10px 14px;
+  overflow: hidden;
   border: 1px solid #dfe7e2;
+  border-radius: 5px;
 }
 
-.rise-sponsor-footer .rc-mark img[src$="/news-linkedin-35-01.jpg"] {
-  max-width: min(100%, 172px);
+.rise-sponsor-footer .rc-mark img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-/* The NETL artwork is centered inside a wide blank margin in the source image. */
 .rise-sponsor-footer .rc-mark img[src$="/netl-official.png"] {
-  transform: scale(1.22);
+  transform: scale(1.18);
 }
 
-@media (max-width: 580px) {
-  .rise-sponsor-footer .rc-name {
-    font-size: 14px;
-  }
+.rise-sponsor-footer .rc-name {
+  max-width: 25ch;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 600;
+  line-height: 1.4;
+  text-wrap: balance;
 }
 
-.rise-sponsor-footer .rc-sponsor-link:is(:hover, :focus-visible) .rc-name {
-  color: #286050;
-}
-
-.rise-sponsor-footer .rc-sponsor-link:hover .rc-mark {
-  box-shadow: 0 0 0 2px #c5d8cc;
-}
-
-.rise-sponsor-footer .rc-sponsor-link:focus-visible {
-  outline-color: #286050;
+.rise-sponsor-footer .rc-copy {
+  display: none;
 }
 
 .rise-sponsor-footer .rise-copyright {
@@ -293,15 +91,34 @@
   color: #456258;
 }
 
-@media (min-width: 992px) {
-  .rise-sponsor-footer .rc-acknowledgments {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    width: 100%;
-    column-gap: clamp(14px, 1.5vw, 20px);
+@media (prefers-reduced-motion: no-preference) {
+  .rise-sponsor-footer .rc-viewport {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 12px, #000 calc(100% - 12px), transparent);
   }
 
-  .rise-sponsor-footer .rc-acknowledgments .rc-mark {
-    width: 100%;
-    height: 84px;
+  .rise-sponsor-footer .rc-track {
+    display: flex;
+    width: max-content;
+    animation: rc-scroll 50s linear infinite;
+  }
+
+  .rise-sponsor-footer .rc-track .rc-grid {
+    display: flex;
+    flex: none;
+    flex-wrap: nowrap;
+    padding-inline-end: var(--rc-gap);
+  }
+
+  .rise-sponsor-footer .rc-track .rc-card {
+    flex: 0 0 clamp(180px, 18vw, 260px);
+    max-width: none;
+    width: clamp(180px, 18vw, 260px);
+  }
+}
+
+@keyframes rc-scroll {
+  to {
+    transform: translateX(-50%);
   }
 }

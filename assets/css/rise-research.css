@@ -207,6 +207,23 @@
   margin-top: 6px;
 }
 
+.rise-site .rm-papers .rm-paper-cover > a {
+  display: inline;
+}
+
+.rm-papers .rm-cover-label {
+  display: inline-block;
+  margin: 0 0 0 5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #f5e3b8;
+  color: #70450d;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
 .rm-more {
   display: inline-block;
   color: #124c40;

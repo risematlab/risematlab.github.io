@@ -1,4 +1,4 @@
-/* Keep the PI profile and biography aligned without widening the reading column. */
+/* Align the PI profile with the full biography column. */
 #principal-investigator .rise-people-grid {
   gap: clamp(24px, 4vw, 56px);
   margin-top: clamp(20px, 2.5vw, 32px);
@@ -61,6 +61,7 @@
 }
 
 .pi-biography {
+  min-inline-size: 0;
   font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.65;
   color: var(--rise-muted);
@@ -217,7 +218,7 @@
   margin: 0;
 }
 
-.alumni-details dd + dt {
+.alumni-details dd + dt.visually-hidden + dd {
   margin-top: 12px;
 }
 
@@ -258,9 +259,29 @@
   margin: 0 0 6px;
 }
 
-.person-details-copy .person-meta {
-  font-size: 14px;
+.person-education {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  color: var(--rise-muted);
+  font-size: .9375rem;
+  line-height: 1.45;
+  list-style: none;
 }
+
+.person-education li { min-inline-size: 0; }
+
+.person-education span { display: block; text-wrap: balance; }
+
+.person-education-degree {
+  color: var(--rise-ink);
+  font-weight: 600;
+}
+
+.person-details-copy > .person-education { margin-bottom: 10px; }
+
+.person-card-body:has(+ .person-details) { flex: none; }
 
 .person-details-copy p:last-child {
   color: var(--rise-muted);
@@ -345,6 +366,17 @@
     align-items: center;
     row-gap: 10px;
   }
+
+  #alumni .person-card-text-only {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #community .person-card > :is(.person-details, .person-profile-link) {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  #community .person-card > .person-profile-link { justify-self: start; }
 
   #alumni .alumni-details,
   #alumni .person-profile-link {

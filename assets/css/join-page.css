@@ -1,3 +1,9 @@
+@media (max-width: 360px) {
+  .rise-section-hero-join .rise-page-title {
+    font-size: clamp(1.5rem, 9vw, 2rem);
+  }
+}
+
 #opportunities .rise-section-title {
   margin-bottom: 24px;
 }
@@ -9,44 +15,29 @@
   letter-spacing: -.025em;
 }
 
-#opportunities .text-card > p,
-#opportunities .join-application p {
+#opportunities .text-card > p {
   margin: 0;
   color: var(--rise-muted);
 }
 
-#opportunities .join-application {
+.join-pathways-intro {
   display: grid;
-  gap: 16px 36px;
-  max-width: none;
-  margin-top: 24px;
+  gap: 14px;
+  margin-block-end: clamp(24px, 3vw, 40px);
 }
 
-#opportunities .join-application .rise-section-title {
-  margin-bottom: 10px;
-  font-size: clamp(24px, 2.8vw, 34px);
-}
-
-.join-inquiry-list {
+.join-pathways-intro .rise-intro {
+  max-inline-size: 72ch;
   margin: 0;
-  padding-inline-start: 1.25rem;
-}
-
-.join-inquiry-list li + li {
-  margin-top: 6px;
 }
 
 .join-inquiry-link {
-  justify-self: start;
+  margin-block-start: 14px;
 }
 
-@media (min-width: 768px) {
-  #opportunities .join-application {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  }
-
-  .join-inquiry-list {
-    grid-area: 1 / 2 / 3 / 3;
-    align-self: center;
+@media (min-width: 992px) {
+  .join-pathways-intro {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: clamp(32px, 5vw, 64px);
   }
 }

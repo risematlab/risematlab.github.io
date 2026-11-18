@@ -2,11 +2,11 @@
 #home-research .rise-grid { align-items: stretch; }
 #home-research .rise-card { display: flex; flex-direction: column; min-width: 0; }
 #home-research .rise-card-image { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-#home-research .rise-card[data-area="environment"] .rise-card-image { object-position: right bottom; }
+#home-research .rise-card[data-topic="composites"] .rise-card-image { object-position: center 85%; }
 #home-research .rise-card-body { display: flex; flex-direction: column; flex: 1; gap: 14px; padding: 26px; }
 #home-research .rise-card-body > p.rise-eyebrow { color: #124c40; min-height: 0; margin: 0; }
 #home-research .rise-card-body > h3 { margin: 0; }
 #home-research .rise-card-body > p:not(.rise-eyebrow) { min-height: 0; margin: 0; }
 #home-research .rise-card-body > .rise-link { margin-top: auto; padding-top: 8px; align-self: flex-start; }
 @media (max-width: 767px) { #home-research .rise-grid { grid-template-columns: minmax(0, 1fr); } }
-#home-research .rise-card[data-area="low-carbon"] .rise-card-image { object-position: center bottom; }
+#home-research .rise-card[data-topic="data"] .rise-card-image { object-position: center 5%; }

@@ -1,6 +1,15 @@
 (() => {
   'use strict';
-  const labels = {all:'All topics', low:'Low-Carbon & Circular Materials', composites:'Composites & Structural Performance', environment:'Environmental & Functional Materials', durability:'Durability & Infrastructure Preservation', data:'Data-Driven Design & Characterization', extreme:'Extreme Environments & Space'};
+  const labels = {
+    all: 'All topics',
+    composites: 'Composites & mechanics',
+    data: 'Data-driven design & characterization',
+    extreme: 'Extreme environments & space',
+    low: 'Decarbonization & circularity',
+    environment: 'Environmental & functional materials',
+    durability: 'Durability & infrastructure preservation',
+    other: 'Other research',
+  };
   // Assignments are curated against titles on the existing page; unassigned interdisciplinary
   // records remain available under All topics. Multiple labels are intentional.
   const rules = [
@@ -40,11 +49,15 @@
   function start() {
     const intro=document.querySelector('#publication-list'), oldInput=document.querySelector('#publication-search');
     const years=[...document.querySelectorAll('.pub-year')];
-    const categories=[...document.querySelectorAll('.publication-category')];
+    const journalSection=intro?.querySelector('#journals');
+    const categories=[...document.querySelectorAll('.publication-category')].filter(section=>section!==journalSection);
     if (!intro || !oldInput || !years.length || !categories.length || document.querySelector('#publication-filters-v2')) return;
-    const types=[['all','All types'],['journal','Journal Articles'],['conference','Conference Proceedings'],['technical-reports','Technical Reports'],['presentations','Presentations'],['other-publications','Other Publications']];
     const rows=[...years.flatMap(section=>[...section.querySelectorAll('.pub-entry')].map(el=>({el,section,type:'journal'}))),...categories.flatMap(section=>[...section.querySelectorAll('.citation-entry')].map(el=>({el,section,type:section.id})))];
-    rows.forEach(row=>{row.text=row.el.textContent.toLocaleLowerCase(); row.topics=new Set(); const managed=row.el.getAttribute('data-admin-topics'); if(managed!==null) managed.split(/\s+/).filter(Boolean).forEach(tag=>row.topics.add(tag)); else rules.forEach(([needle,tags])=>{if(row.text.includes(needle)) tags.forEach(tag=>row.topics.add(tag));});});
+    rows.forEach(row=>{
+      const citation=row.el.querySelector(':scope > .citation-copy');
+      const source=row.el.querySelector(':scope > .rise-link');
+      row.text=(citation ? citation.textContent + (source?.textContent || '') : row.el.textContent).toLocaleLowerCase();
+       row.topics=new Set(); const managed=row.el.getAttribute('data-admin-topics'); if(managed!==null) managed.split(/\s+/).filter(Boolean).forEach(tag=>row.topics.add(tag)); else rules.forEach(([needle,tags])=>{if(row.text.includes(needle)) tags.forEach(tag=>row.topics.add(tag));});});
     // Keep the visible topic labels in the same taxonomy and order as the filter.
     // Items outside the six research areas remain available under All topics.
     rows.forEach(row=>{
@@ -59,28 +72,27 @@
       if(row.type==='journal') {
         const journal=row.el.querySelector('.pub-journal');
         if(journal) journal.after(list); else row.el.querySelector('h3')?.after(list);
-      } else row.el.append(list);
+      } else {
+        const content = row.el.querySelector('.publication-book-content') || row.el;
+        content.append(list);
+      }
     });
     const oldGroup=document.querySelector('.publication-topic-filter'); if(oldGroup) oldGroup.remove();
     const oldNav=document.querySelector('.publication-categories'); if(oldNav) oldNav.hidden=true;
-    const eyebrow=intro.querySelector('.rise-wrap > .rise-eyebrow'); if(eyebrow) eyebrow.textContent='PUBLICATION RECORD';
-    const title=intro.querySelector('h2'); if(title) title.textContent='Explore our publications';
-    const lede=intro.querySelector('.rise-intro'); if(lede) lede.textContent='Explore journal articles, conference proceedings, reports, presentations and other publications. Journal years indicate online publication where this differs from the issue date.';
-    const input=oldInput.cloneNode(true); oldInput.replaceWith(input);
-    input.placeholder='Search papers'; input.setAttribute('aria-label','Search all publications');
+    const input=oldInput;
+    input.placeholder='Title, author or keyword'; input.setAttribute('aria-label','Search all publications');
     const searchLabel=intro.querySelector('.publication-search .rise-eyebrow'); if(searchLabel) searchLabel.textContent='Search publications';
     const status=document.getElementById('publication-search-status'); if(status) status.setAttribute('role','status');
     const box=document.createElement('div'); box.id='publication-filters-v2';
     const css=document.createElement('style'); css.textContent='.publication-topic-tags{display:flex;flex-wrap:wrap;gap:6px 10px;margin:10px 0 14px}.publication-topic-tags span{font-size:12px;line-height:1.35;color:#36584c;background:#edf3ec;padding:4px 8px;border-radius:3px}#publication-filters-v2{margin:26px 0 0} .pub-filter-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 18px} .pub-filter-row .rise-eyebrow{flex:0 0 145px;margin:0} .pub-filter-row button{font:inherit;font-size:14px;font-weight:650;color:#124c40;background:#fff;border:1px solid #cddfd2;border-radius:4px;padding:10px 13px;cursor:pointer} .pub-filter-row button[aria-pressed=true]{color:white;background:#124c40;border-color:#124c40} .pub-filter-row button:hover{border-color:#124c40}.pub-filter-row button:focus-visible{outline:3px solid #93bc66;outline-offset:3px}.pub-year[hidden],.publication-category[hidden],.pub-entry[hidden],.citation-entry[hidden],.publication-categories[hidden],.publication-topic-filter[hidden]{display:none!important}@media(max-width:700px){.pub-filter-row .rise-eyebrow{flex-basis:100%}}';document.head.append(css);
     function group(title,items,fn){const row=document.createElement('div');row.className='pub-filter-row';row.setAttribute('role','group');row.setAttribute('aria-label',title);const l=document.createElement('p');l.className='rise-eyebrow';l.textContent=title;row.append(l); const buttons=items.map(([key,label])=>{const b=document.createElement('button');b.type='button';b.dataset.key=key;const text=document.createElement('span');text.className='pub-topic-label';text.textContent=label;b.append(text);b.addEventListener('click',()=>fn(key));row.append(b);return b;});box.append(row);return buttons;}
-    let selectedType='all', selectedTopic='all', legacyTopic='';
+    let selectedTopic='all', legacyTopic='';
     const query=new URLSearchParams(location.search).get('topic');
     if(query === 'composite-structural') selectedTopic='composites';
     else if(query && Object.hasOwn(labels,query) && query !== 'composites') selectedTopic=query;
     else if(query && Object.hasOwn(legacy,query)) legacyTopic=query;
-    const typeButtons=[];
     const topicButtons=group('Filter by topic',Object.entries(labels),key=>{selectedTopic=key;legacyTopic=''; updateUrl(key);apply();});
-    const reset=document.createElement('button');reset.type='button';reset.textContent='Clear filters';reset.className='publication-clear';reset.addEventListener('click',()=>{selectedType='all';selectedTopic='all';legacyTopic='';input.value='';if(mobileYear)mobileYear.value='all';updateUrl('all');apply();});box.append(reset);intro.querySelector('.publication-search').after(box);
+    const reset=document.createElement('button');reset.type='button';reset.textContent='Clear filters';reset.className='publication-clear';reset.addEventListener('click',()=>{selectedTopic='all';legacyTopic='';input.value='';if(mobileYear)mobileYear.value='all';updateUrl('all');apply();});box.append(reset);intro.querySelector('.publication-search').after(box);
     // The mobile controls share the existing search and topic state. Desktop
     // keeps its original controls and does not apply the mobile journal year.
     const mobile = intro.querySelector('.publication-mobile-filters');
@@ -91,7 +103,6 @@
     const mobileSelection = mobile?.querySelector('.publication-mobile-selection');
     const mobileMeta = intro.querySelector('.publication-mobile-meta');
     const searchBox = input.closest('.publication-search');
-    const defaultPlaceholder = input.placeholder;
 
     function syncMobileControls() {
       if (!mobile) return;
@@ -114,7 +125,6 @@
       const isPhone = phoneWidth.matches;
       mobile.hidden = !isPhone;
       mobileMeta.hidden = !isPhone;
-      input.placeholder = isPhone ? 'Title, author or keyword' : defaultPlaceholder;
       if (status) {
         if (isPhone) mobileMeta.prepend(status);
         else searchBox.append(status);
@@ -155,9 +165,10 @@
 
     function updateUrl(key){try{const u=new URL(location.href);if(key==='all')u.searchParams.delete('topic');else u.searchParams.set('topic',key==='composites'?'composite-structural':key);history.replaceState(null,'',u);}catch(e){}}
     function apply(){const q=input.value.trim().toLocaleLowerCase();let count=0;
-      rows.forEach(row=>{const topicMatch=legacyTopic ? row.type==='journal'&&(legacy[legacyTopic]||[]).some(x=>row.text.includes(x)) : selectedTopic==='all'||row.topics.has(selectedTopic);const yearMatch = !mobile || !phoneWidth.matches || mobileYear.value === 'all' || row.section.id === 'year-' + mobileYear.value;const visible=(selectedType==='all'||row.type===selectedType)&&topicMatch&&yearMatch&&(!q||row.text.includes(q));row.el.hidden=!visible;if(visible)count++;});
+      rows.forEach(row=>{const topicMatch=legacyTopic ? row.type==='journal'&&(legacy[legacyTopic]||[]).some(x=>row.text.includes(x)) : selectedTopic==='all'||row.topics.has(selectedTopic);const yearMatch = !mobile || !phoneWidth.matches || mobileYear.value === 'all' || row.section.id === 'year-' + mobileYear.value;const visible=topicMatch&&yearMatch&&(!q||row.text.includes(q));row.el.hidden=!visible;if(visible)count++;});
       [...years,...categories].forEach(section=>{section.hidden=!rows.some(row=>row.section===section&&!row.el.hidden);});
-      typeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.key===selectedType)));topicButtons.forEach(b=>b.setAttribute('aria-pressed',String(!legacyTopic&&b.dataset.key===selectedTopic)));
+      if(journalSection) journalSection.hidden=years.every(section=>section.hidden);
+      topicButtons.forEach(b=>b.setAttribute('aria-pressed',String(!legacyTopic&&b.dataset.key===selectedTopic)));
       if(status)status.textContent=legacyTopic?`Showing ${count} results for previous topic: ${legacyTopic}. Select a new topic or clear filters.`:`Showing ${count} publication${count===1?'':'s'}.`;
       reset.hidden=!(input.value.length || selectedTopic!=='all' || legacyTopic);
       syncMobileControls();

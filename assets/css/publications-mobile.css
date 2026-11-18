@@ -73,11 +73,6 @@
     margin-top: 15px;
   }
 
-  #publication-list.publication-mobile-ready .publication-results .pub-entry h3 {
-    font-size: clamp(18px, 4.95vw, 23px);
-    line-height: 1.27;
-  }
-
   #publication-list.publication-mobile-ready .publication-mobile-citation-note {
     display: block;
   }
@@ -194,24 +189,6 @@
   .publication-mobile-options > :focus-visible {
     outline: 2px solid #124c40;
     outline-offset: 3px;
-  }
-
-  #publication-list.publication-mobile-ready .publication-results > .pub-year {
-    padding-block: 0 30px;
-  }
-
-  #publication-list.publication-mobile-ready .pub-year > .rise-wrap > .rise-eyebrow,
-  #publication-list.publication-mobile-ready .pub-entry > .rise-eyebrow {
-    display: none;
-  }
-
-  #publication-list.publication-mobile-ready .pub-year .rise-section-title {
-    margin: 0;
-    font-size: clamp(24px, 2vw, 32px);
-  }
-
-  #publication-list.publication-mobile-ready .pub-entry {
-    padding-block: 18px;
   }
 
   .publication-mobile-citation-note {

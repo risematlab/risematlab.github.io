@@ -1,21 +1,44 @@
-/* Shared titles for the home research cards and matching Research areas. */
-(() => {
+/* Keep the homepage's research previews in Research Area order. */
+(async () => {
   'use strict';
-  const areas = [
-    { id: 'low-carbon', topic: 'low', shortTitle: 'Low-carbon cementitious materials', fullTitle: 'Low-carbon & circular materials' },
-    { id: 'resilient', topic: 'composites', shortTitle: 'Resilient composites', fullTitle: 'Composites & structural performance' },
-    { id: 'environment', topic: 'environment', shortTitle: 'Environmental materials', fullTitle: 'Environmental & functional materials' }
-  ];
-  function renderTitles() {
-    areas.forEach(area => {
-      const short = document.querySelector(`#home-research .rise-card[data-area="${area.id}"] h3`);
-      const topic = document.querySelector(`#overview .rm2-topic[data-topic="${area.topic}"] .rm2-topic-title`);
-      const detail = document.querySelector(`#${area.id} h2`);
-      if (short) short.textContent = area.shortTitle;
-      if (topic) topic.textContent = area.fullTitle;
-      if (detail) detail.textContent = area.fullTitle;
-    });
+
+  const grid = document.querySelector('#home-research .rise-grid');
+  if (!grid || !/^https?:$/.test(location.protocol)) return;
+
+  const previews = new Map([...grid.children].map(card => [card.dataset.topic, card]));
+  const researchPage = new URL('research.html', location.href);
+
+  try {
+    const response = await fetch(researchPage, { mode: 'same-origin' });
+    if (!response.ok) return;
+
+    const source = new DOMParser().parseFromString(await response.text(), 'text/html');
+    const topics = [...source.querySelectorAll('#overview .rm2-topic')].slice(0, previews.size);
+    const ordered = topics.map(topic => ({
+      card: previews.get(topic.dataset.topic),
+      title: topic.querySelector('.rm2-topic-title')?.textContent.trim(),
+      hash: topic.getAttribute('href'),
+    }));
+
+    if (ordered.length !== previews.size ||
+        ordered.some(({ card, title, hash }) => !card || !title || !/^#[\w-]+$/.test(hash))) return;
+
+    for (const { card, title, hash } of ordered) {
+      card.querySelector('h3').textContent = title;
+
+      for (const link of card.querySelectorAll('a[href]')) {
+        link.setAttribute('href', 'research.html' + hash);
+        link.setAttribute('aria-label', link.classList.contains('home-card-text-link')
+          ? title
+          : 'Explore research on ' + title);
+      }
+    }
+
+    const cards = [...grid.children];
+    if (ordered.some(({ card }, index) => card !== cards[index])) {
+      grid.append(...ordered.map(({ card }) => card));
+    }
+  } catch {
+    // Keep the editorial previews when the Research page is unavailable.
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderTitles, { once: true });
-  else renderTitles();
 })();

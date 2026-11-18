@@ -1,10 +1,10 @@
-#overview .rm2-tags span {
+.rm2-grid .rm2-tags span {
   font-size: 13px;
   line-height: 1.25;
   padding: 4px 8px;
 }
 
-#overview .rm2-action {
+.rm2-grid .rm2-action {
   font-size: 15px;
   line-height: 1.3;
 }

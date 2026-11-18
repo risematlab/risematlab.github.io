@@ -85,6 +85,10 @@
   text-wrap: pretty;
 }
 
+.home-page .home-section-header > .rise-intro {
+  max-width: none;
+}
+
 .home-page .home-section-link {
   display: inline-flex;
   align-items: center;
@@ -234,11 +238,6 @@
 
 /* Keep both the wordmark and the full menu visible on compact screens. */
 @media (min-width: 768px) {
-  .rise-nav > .container {
-    width: 100%;
-    max-width: 1320px;
-  }
-
   .rise-nav .navbar-brand {
     flex: 1 1 0;
     min-width: 0;
@@ -253,12 +252,6 @@
 
   .rise-nav .navbar-collapse {
     flex: 0 0 auto;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  .rise-nav > .container {
-    padding-inline: clamp(20px, 3vw, 36px);
   }
 }
 
@@ -292,6 +285,22 @@
     margin-top: 0;
     padding-inline: 14px;
   }
+}
+
+@media (min-width: 768px) and (max-width: 849.98px) {
+  .rise-nav .home-brand-title { font-size: 16px; }
+  .rise-nav .navbar-collapse .nav-link {
+    font-size: 14px;
+    padding-inline: 4px !important;
+  }
+  .rise-nav .navbar-collapse .btn {
+    font-size: 14px;
+    padding-inline: 11px;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 1199.98px) {
+  .rise-nav :is(.home-brand-title, .home-brand-expansion) { text-wrap: balance; }
 }
 
 /* Keep the longer lab name readable beside the mobile menu control. */
@@ -379,7 +388,9 @@
 
 @media (max-width: 575.98px) {
   .rise-nav .home-brand-expansion {
-    display: none;
+    font-size: clamp(10px, 2.8vw, 12px);
+    line-height: 1.25;
+    text-wrap: balance;
   }
 }
 
