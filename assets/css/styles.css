@@ -32,6 +32,7 @@ html {
 .rise-site a {
   font-family: "RISE Link Arrows", "Segoe UI", Arial, sans-serif;
   font-variant-emoji: text;
+  text-decoration-skip-ink: none;
   text-underline-offset: 5px;
 }
 
@@ -52,6 +53,10 @@ html {
 .rise-site .rm-papers a.rise-arrow-link {
   display: block;
   min-height: 0;
+}
+
+.rise-site .pi-links a.rise-arrow-link {
+  display: block;
 }
 
 .rise-site a.rise-arrow-link > .rise-link-label {
@@ -82,13 +87,16 @@ html {
   margin: 0;
   margin-inline-start: 5px;
   color: inherit;
-  font: 400 1em/1 "RISE Link Arrows";
-  font-synthesis: none;
   vertical-align: -.05em;
 }
 
 .rise-site a.rise-arrow-link > .rise-link-arrow[data-direction="left"] {
   margin-inline: 0 5px;
+}
+
+.rise-site .rise-link-arrow {
+  font: 400 1em/1 "RISE Link Arrows";
+  font-synthesis: none;
 }
 
 .rise-link-arrow::before {
@@ -101,6 +109,12 @@ html {
 
 .rise-link-arrow[data-direction="right"]::before {
   content: "\e001";
+}
+
+.rise-link-arrow[data-direction="down"]::before {
+  display: inline-block;
+  content: "\e001";
+  transform: rotate(90deg);
 }
 
 .rise-site .rm-lane:not(:last-child)::after {

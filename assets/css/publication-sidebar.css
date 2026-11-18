@@ -33,6 +33,10 @@
   border-top: 0;
 }
 
+#publication-list :is(.pub-entry, .citation-entry) > .rise-link {
+  text-decoration-skip-ink: none;
+}
+
 #publication-filters-v2 .publication-clear {
   display: inline-block;
   padding: 0;

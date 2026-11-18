@@ -167,9 +167,9 @@
 }
 
 #home-publications .featured-paper-image {
-  height: clamp(144px, 14vw, 188px);
+  height: clamp(224px, 17vw, 264px);
   object-position: center;
-  padding: 8px;
+  padding: 6px;
   margin-bottom: 14px;
 }
 
@@ -189,7 +189,7 @@
 @media (max-width: 1199.98px) {
   #home-publications .pub-entry {
     display: grid;
-    grid-template-columns: clamp(64px, 17vw, 104px) minmax(0, 1fr);
+    grid-template-columns: clamp(88px, 27vw, 160px) minmax(0, 1fr);
     align-items: start;
     column-gap: 14px;
   }
