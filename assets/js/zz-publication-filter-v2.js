@@ -96,7 +96,7 @@
     // The mobile controls share the existing search and topic state. Desktop
     // keeps its original controls and does not apply the mobile journal year.
     const mobile = intro.querySelector('.publication-mobile-filters');
-    const phoneWidth = matchMedia('(max-width: 767.98px)');
+    const compactLayout = matchMedia('(max-width: 991.98px)');
     const mobileTopic = mobile?.querySelector('#publication-mobile-topic');
     const mobileYear = mobile?.querySelector('#publication-mobile-year');
     const mobileReset = mobile?.querySelector('.publication-mobile-reset');
@@ -122,11 +122,11 @@
     }
 
     function updateMobileControls() {
-      const isPhone = phoneWidth.matches;
-      mobile.hidden = !isPhone;
-      mobileMeta.hidden = !isPhone;
+      const isCompact = compactLayout.matches;
+      mobile.hidden = !isCompact;
+      mobileMeta.hidden = !isCompact;
       if (status) {
-        if (isPhone) mobileMeta.prepend(status);
+        if (isCompact) mobileMeta.prepend(status);
         else searchBox.append(status);
       }
     }
@@ -154,7 +154,7 @@
         reset.click();
         mobile.querySelector('summary').focus({preventScroll: true});
       });
-      phoneWidth.addEventListener('change', () => {
+      compactLayout.addEventListener('change', () => {
         updateMobileControls();
         apply();
       });
@@ -165,7 +165,7 @@
 
     function updateUrl(key){try{const u=new URL(location.href);if(key==='all')u.searchParams.delete('topic');else u.searchParams.set('topic',key==='composites'?'composite-structural':key);history.replaceState(null,'',u);}catch(e){}}
     function apply(){const q=input.value.trim().toLocaleLowerCase();let count=0;
-      rows.forEach(row=>{const topicMatch=legacyTopic ? row.type==='journal'&&(legacy[legacyTopic]||[]).some(x=>row.text.includes(x)) : selectedTopic==='all'||row.topics.has(selectedTopic);const yearMatch = !mobile || !phoneWidth.matches || mobileYear.value === 'all' || row.section.id === 'year-' + mobileYear.value;const visible=topicMatch&&yearMatch&&(!q||row.text.includes(q));row.el.hidden=!visible;if(visible)count++;});
+      rows.forEach(row=>{const topicMatch=legacyTopic ? row.type==='journal'&&(legacy[legacyTopic]||[]).some(x=>row.text.includes(x)) : selectedTopic==='all'||row.topics.has(selectedTopic);const yearMatch = !mobile || !compactLayout.matches || mobileYear.value === 'all' || row.section.id === 'year-' + mobileYear.value;const visible=topicMatch&&yearMatch&&(!q||row.text.includes(q));row.el.hidden=!visible;if(visible)count++;});
       [...years,...categories].forEach(section=>{section.hidden=!rows.some(row=>row.section===section&&!row.el.hidden);});
       if(journalSection) journalSection.hidden=years.every(section=>section.hidden);
       topicButtons.forEach(b=>b.setAttribute('aria-pressed',String(!legacyTopic&&b.dataset.key===selectedTopic)));

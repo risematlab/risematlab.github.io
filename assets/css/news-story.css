@@ -100,6 +100,24 @@
   display: none;
 }
 
+@media (min-width: 480px) and (max-width: 991.98px) and (max-height: 520px) and (orientation: landscape) {
+  .news-detail .rise-page-intro {
+    padding-block: clamp(14px, 4vh, 20px);
+  }
+
+  .news-detail .rise-page-lede {
+    margin-top: .7rem;
+  }
+
+  .news-detail #story {
+    padding-block-start: 18px;
+  }
+
+  .news-detail #story .rise-section-title {
+    margin-bottom: .85rem;
+  }
+}
+
 .story-media {
   --story-media-gap: clamp(12px, 1.6vw, 20px);
   display: grid;
