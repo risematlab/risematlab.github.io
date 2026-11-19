@@ -1,12 +1,12 @@
 (() => {
   'use strict';
   const topics = [
-    { key: 'research', label: 'Research & publications', ids: [4,10,11,12,14,15,16,18,19,20,21,22,26,27,28,36,37,40,43] },
-    { key: 'projects', label: 'Projects & fieldwork', ids: [1,4,14,18,19,20,21,26,27,28,30,35,37,40,43] },
-    { key: 'people', label: 'People & alumni', ids: [3,6,8,9,23,24,25,29,31,32,33,34,38,39,41,42] },
-    { key: 'awards', label: 'Awards & recognition', ids: [9,30,35,39,41] },
-    { key: 'events', label: 'Conferences & events', ids: [5,7,9,30,32,33,42] },
-    { key: 'outreach', label: 'Outreach & opportunities', ids: [2,3,4,5,8,13,17,44] }
+    { key: 'research', label: 'Research', ids: [1, 4, 7, 10, 11, 12, 14, 15, 16, 17, 22, 26, 27, 28, 29, 34, 37, 40, 43] },
+    { key: 'publication', label: 'Publication', ids: [10, 11, 12, 14, 15, 16, 22, 26, 27, 28, 36, 37, 40, 43] },
+    { key: 'team', label: 'Team', ids: [3, 8, 9, 23, 24, 25, 29, 30, 31, 32, 33, 34, 35, 38, 39, 41, 42, 44, 45] },
+    { key: 'media', label: 'Media', ids: [3, 4, 46] },
+    { key: 'award', label: 'Award', ids: [9, 30, 35, 39, 41, 45] },
+    { key: 'outreach', label: 'Outreach', ids: [5, 17, 46] },
   ];
   const start = () => {
     const yearsBar = document.querySelector('#stories .rise-filter-links');

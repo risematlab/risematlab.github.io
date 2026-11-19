@@ -4,7 +4,7 @@
 
 .media-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 2vw, 22px); }
 @media (min-width: 680px) { .media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1120px) { .media-grid:not(.media-grid-interviews) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1120px) { .media-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .media-card {
   display: flex;
@@ -47,3 +47,34 @@
 .media-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(12, 52, 43, .9); border: 1px solid rgba(255, 255, 255, .8); display: grid; place-items: center; }
 .media-play::after { content: ""; margin-left: 4px; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 12px solid #fff; }
 @media (prefers-reduced-motion: reduce) { .media-preview img { transition: none; } }
+
+.media-section-links { display: none; }
+
+@media (max-width: 767.98px) {
+  .rise-site main > .rise-section-hero-media + .media-section { padding-top: 16px; }
+
+  .media-section-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .media-section-links a {
+    display: grid;
+    place-items: center;
+    min-height: 44px;
+    padding: 6px 4px;
+    border: 1px solid #c5d7ca;
+    border-radius: 6px;
+    background: #f2f6ef;
+    color: var(--rise-green);
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .media-section-links a:is(:hover, :focus-visible) { text-decoration: underline; }
+}

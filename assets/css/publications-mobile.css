@@ -141,6 +141,12 @@
     outline-offset: 3px;
   }
 
+  #publication-list .publication-title-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
   .publication-mobile-citation-note {
     margin: 6px 0 0;
     color: #53645f;

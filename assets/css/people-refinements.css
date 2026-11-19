@@ -1,12 +1,13 @@
 /* Align the PI profile with the full biography column. */
 #principal-investigator .rise-people-grid {
+  align-items: start;
   gap: clamp(24px, 4vw, 56px);
   margin-top: clamp(20px, 2.5vw, 32px);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   #principal-investigator .rise-people-grid {
-    grid-template-columns: clamp(240px, 25vw, 320px) minmax(0, 1fr);
+    grid-template-columns: clamp(200px, 24vw, 320px) minmax(0, 1fr);
   }
 }
 
@@ -62,7 +63,7 @@
 
 .pi-biography {
   min-inline-size: 0;
-  font-size: clamp(16px, 1.2vw, 18px);
+  font-size: clamp(16px, 1.25vw, 19px);
   line-height: 1.65;
   color: var(--rise-muted);
 }
@@ -85,6 +86,7 @@
 
 .pi-biography p {
   margin: 0;
+  text-wrap: pretty;
 }
 
 .pi-biography .pi-bio-intro {
@@ -133,73 +135,60 @@
 #alumni .person-card {
   display: flex;
   flex-direction: column;
+  min-inline-size: 0;
+  border-radius: 8px;
 }
 
 .person-card-portrait {
   width: 100%;
   height: 220px;
-  margin-bottom: 17px;
-  overflow: hidden;
-  border-radius: 4px;
-  background: #fff;
+  margin-bottom: 16px;
 }
 
 .person-card-portrait .person-photo {
   display: block;
+  height: 100%;
   margin-block: 0;
+  border-radius: 5px;
+  background: transparent;
 }
 
-#community .person-card-portrait :is(.diego-photo,.klay-photo,.minseok-photo,.lauren-photo) {
-  background: #fff;
-}
-
-.lauren-photo {
-  object-fit: contain;
-  object-position: center;
-}
-
+.lauren-photo,
 #alumni .person-photo {
   object-fit: contain;
   object-position: center;
 }
 
-.person-card-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
+.person-card-heading .person-card-label {
+  margin: 0 0 5px;
 }
 
-.person-card-body .person-card-label {
-  margin: 0 0 6px;
-}
-
-.person-card-body > h4 {
-  margin: 0 0 9px;
-}
-
-.person-card-body > .person-research {
-  margin: 0 0 6px;
-  line-height: 1.55;
-}
-
+.person-card-heading > h4,
 .alumni-card-heading > h4 {
   margin: 0;
   font-size: clamp(20px, 1.8vw, 24px);
-  line-height: 1.2;
-  text-wrap: balance;
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+}
+
+#community .person-research {
+  margin: 8px 0 0;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .alumni-card-heading > p {
   margin: 5px 0 0;
   color: var(--rise-muted);
   font-size: 14px;
+  font-variant-numeric: tabular-nums;
   line-height: 1.45;
 }
 
 .alumni-details {
-  margin: 14px 0 6px;
-  padding-top: 11px;
+  margin: 14px 0 8px;
+  padding-top: 13px;
   border-top: 1px solid #dbe5dd;
   color: var(--rise-muted);
   font-size: 15px;
@@ -235,14 +224,10 @@
   font-weight: 600;
 }
 
-@media (min-width: 768px) {
-  #alumni .person-card {
-    padding-bottom: 20px;
-  }
-}
-
 .person-background {
-  margin-block-start: 8px;
+  margin-block-start: 14px;
+  padding-block-start: 13px;
+  border-block-start: 1px solid #dbe5dd;
 }
 
 .person-background-heading {
@@ -256,6 +241,9 @@
 .person-background p {
   margin: 0 0 6px;
   color: var(--rise-muted);
+  font-size: .9375rem;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .person-education {
@@ -271,7 +259,7 @@
 
 .person-education li { min-inline-size: 0; }
 
-.person-education span { display: block; text-wrap: balance; }
+.person-education span { display: block; overflow-wrap: anywhere; }
 
 .person-education-degree {
   color: var(--rise-ink);
@@ -279,8 +267,6 @@
 }
 
 .person-background > .person-education { margin-bottom: 10px; }
-
-.person-card-body:has(+ .person-background) { flex: none; }
 
 .alumni-directory {
   display: grid;
@@ -330,52 +316,58 @@
   font-size: 14px;
 }
 
-@media (min-width: 992px) {
-  .alumni-group > .people-student-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 767.98px) {
-  #community .people-student-grid,
-  #alumni .alumni-group .people-student-grid {
-    gap: 12px;
+  .people-page-nav {
+    padding-block: 12px;
+    border-bottom: 1px solid #dbe5dd;
   }
+
+  .people-page-nav > .rise-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .people-page-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 7px 10px;
+    border: 1px solid #dbe5dd;
+    border-radius: 6px;
+    background: #f2f6f1;
+    color: var(--rise-green);
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .people-page-nav a:focus-visible {
+    outline: 2px solid var(--rise-green);
+    outline-offset: 2px;
+  }
+
+  :is(#community, #alumni) .people-student-grid { gap: 12px; }
 
   #community .person-card,
   #alumni .person-card {
     display: grid;
-    grid-template-columns: clamp(72px,21vw,100px) minmax(0,1fr);
-    align-items: start;
-    gap: 12px;
+    grid-template-columns: clamp(72px, 21vw, 100px) minmax(0, 1fr);
+    align-items: center;
+    gap: 10px 12px;
     padding: 14px;
   }
 
-  #alumni .person-card {
-    align-items: center;
-    row-gap: 10px;
-  }
-
-  #alumni .person-card-text-only {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  #community .person-card > :is(.person-background, .person-profile-link) {
+  #community .person-card > :is(.person-research, .person-background, .person-profile-link),
+  #alumni .person-card > :is(.alumni-details, .person-profile-link) {
     grid-column: 1 / -1;
     margin: 0;
   }
 
-  #community .person-card > .person-profile-link { justify-self: start; }
-
-  #alumni .alumni-details,
-  #alumni .person-profile-link {
-    grid-column: 1 / -1;
-    margin: 0;
-  }
-
-  #alumni .person-profile-link {
-    justify-self: start;
-  }
+  :is(#community, #alumni) .person-profile-link { justify-self: start; }
 
   .person-card-portrait {
     height: auto;
@@ -389,38 +381,22 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transform: none;
   }
 
-  #community .person-card-portrait .peizhi-photo {
-    object-position: center 28%;
-  }
+  #alumni .person-card-portrait .object-fit-contain { object-fit: contain; }
 
-  .person-card-body .person-card-label {
+  #community .person-card-portrait .peizhi-photo { object-position: center 28%; }
+
+  .person-card-heading .person-card-label {
     margin-bottom: 3px;
     font-size: 10px;
     letter-spacing: 1px;
   }
 
-  .person-card-body > h4 {
-    margin-bottom: 5px;
-    font-size: 18px;
-    line-height: 1.25;
-    letter-spacing: 0;
-  }
-
-  .person-card-body > .person-research {
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 1.45;
-  }
-
-  .person-background-heading {
-    font-size: 13px;
-  }
-
-  .person-background p {
-    font-size: 14px;
+  .person-card-heading > h4,
+  .alumni-card-heading > h4 {
+    font-size: clamp(18px, 4.9vw, 20px);
+    letter-spacing: -.2px;
   }
 }
 

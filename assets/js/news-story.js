@@ -9,7 +9,11 @@
       const img = figure.querySelector('.story-image');
       const kind = figure.classList.contains('story-figure-academic') ? 'academic'
         : figure.classList.contains('story-figure-document') ? 'document' : 'photo';
-      return {figure, kind, width: img?.naturalWidth || 0, height: img?.naturalHeight || 0};
+      return {
+        figure, kind,
+        width: Number(img?.getAttribute('width')) || img?.naturalWidth || 0,
+        height: Number(img?.getAttribute('height')) || img?.naturalHeight || 0,
+      };
     });
     const rows = document.createDocumentFragment();
     for (let index = 0; index < items.length; index += 1) {
@@ -40,7 +44,7 @@
 
   for (const media of document.querySelectorAll('.news-detail #story .story-media')) {
     const galleryImages = Array.from(media.querySelectorAll('.story-image'));
-    const pending = galleryImages.filter(img => !img.complete).map(img => new Promise(resolve => {
+    const pending = galleryImages.filter(img => !img.complete && !(img.width && img.height)).map(img => new Promise(resolve => {
       img.addEventListener('load', resolve, {once: true});
       img.addEventListener('error', resolve, {once: true});
     }));
@@ -72,6 +76,7 @@
   close.autofocus = true;
   form.append(original, close);
   const image = document.createElement('img');
+  image.alt = '';
   dialog.append(form, image);
   document.body.append(dialog);
   let trigger;
@@ -95,7 +100,7 @@
       trigger = button;
       image.alt = img.alt;
       image.src = source;
-      original.href = source;
+      original.href = img.dataset.originalSrc || source;
       dialog.showModal();
     });
   }

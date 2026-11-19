@@ -1,5 +1,5 @@
 .news-detail {
-  --story-content-width: 55rem;
+  --story-content-width: 48rem;
 }
 
 .news-detail .rise-page-intro {
@@ -9,16 +9,16 @@
   border-bottom: 1px solid #dce6db;
 }
 
-.news-detail .rise-page-intro .rise-wrap,
-.news-detail #story .rise-wrap {
-  max-width: 66rem;
+.news-detail .rise-page-intro > .rise-wrap,
+.news-detail #story > .rise-wrap {
+  box-sizing: content-box;
+  max-width: var(--story-content-width);
+  text-align: start;
 }
 
-.news-detail .rise-page-intro .rise-wrap > *,
-.news-detail .story-content > :is(p, h2, .story-actions),
-.news-detail #story .story-feature + * {
-  max-width: var(--story-content-width);
-  margin-inline: auto;
+.news-detail :is(.rise-page-title, .rise-page-lede, .story-copy) {
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 .news-detail .rise-page-intro .rise-eyebrow {
@@ -29,10 +29,9 @@
 .news-detail .rise-page-title {
   margin-bottom: 0;
   color: #173c31;
-  font-size: clamp(1.9rem, 4.1vw, 3.4rem);
-  line-height: 1.1;
-  letter-spacing: -.032em;
-  text-wrap: balance;
+  font-size: clamp(1.75rem, 3.6vw, 2.9rem);
+  line-height: 1.14;
+  letter-spacing: -.025em;
 }
 
 .news-detail .rise-page-lede {
@@ -47,8 +46,6 @@
 }
 
 .news-detail #story .rise-section-title {
-  max-width: var(--story-content-width);
-  margin-inline: auto;
   margin-bottom: 1.25rem;
   font-size: clamp(1.45rem, 3vw, 2rem);
 }
@@ -58,12 +55,26 @@
 }
 
 .news-detail .story-copy {
-  margin-bottom: 1em;
+  margin-block-end: 1.05em;
   color: #355047;
-  font-size: clamp(1rem, 1.3vw, 1.125rem);
-  line-height: 1.72;
-  overflow-wrap: anywhere;
-  white-space: pre-line;
+  font-size: clamp(1.0625rem, 1.45vw, 1.1875rem);
+  line-height: 1.65;
+}
+
+.news-detail .story-list {
+  padding-inline-start: 1.3rem;
+}
+
+.news-detail .story-list > li + li {
+  margin-block-start: .55rem;
+}
+
+.news-detail .story-list > li::marker {
+  color: var(--rise-green);
+}
+
+.news-detail .story-list .story-copy {
+  margin-block-end: 0;
 }
 
 .news-detail .story-copy a {
@@ -175,26 +186,44 @@
 }
 
 .story-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .65rem 1.4rem;
   margin-top: clamp(22px, 3vw, 38px);
-  padding-top: .85rem;
+  padding-top: 1rem;
   border-top: 1px solid #dbe5dd;
 }
 
-.story-actions > p {
-  margin: 0;
-}
-
-.story-actions a {
+.rise-site .story-actions .story-back-link {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
-  max-width: 100%;
-  margin: 0;
-  overflow-wrap: anywhere;
+  gap: .5rem;
+  min-height: 44px;
+  padding: .5rem .8rem;
+  border: 1px solid #cddbd2;
+  border-radius: .375rem;
+  background-color: #f4f7f3;
+  color: var(--rise-green);
+  font-size: .94rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.rise-site .story-actions a.story-back-link > .rise-link-label {
+  text-decoration: none;
+}
+
+.rise-site .story-actions a.story-back-link > .rise-link-arrow {
+  margin-inline: 0;
+}
+
+.rise-site .story-actions .story-back-link:hover {
+  border-color: #9db7a7;
+  background-color: #e8f0e8;
+  color: var(--rise-green);
+}
+
+.rise-site .story-actions .story-back-link:focus-visible {
+  outline: 2px solid var(--rise-green);
+  outline-offset: 3px;
 }
 
 .story-photo-button {
@@ -234,7 +263,9 @@
 .story-photo-dialog {
   max-width: min(76rem, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
-  padding: 1rem;
+  max-height: calc(100dvh - 32px);
+  padding: clamp(.625rem, 3vw, 1rem);
+  overscroll-behavior: contain;
   border: 1px solid #dbe5dd;
   border-radius: 8px;
   background: #fff;
@@ -257,7 +288,7 @@
 .story-photo-original {
   display: inline-flex;
   align-items: center;
-  min-height: 42px;
+  min-height: 44px;
   margin-right: auto;
   color: #124c40;
   font-weight: 600;
@@ -265,7 +296,7 @@
 }
 
 .story-photo-close {
-  min-height: 42px;
+  min-height: 44px;
   padding: .45rem .85rem;
   border: 1px solid #becfc2;
   border-radius: .35rem;
@@ -279,6 +310,7 @@
   display: block;
   max-width: 100%;
   max-height: calc(100vh - 8rem);
+  max-height: calc(100dvh - 8rem);
   margin-inline: auto;
   object-fit: contain;
 }

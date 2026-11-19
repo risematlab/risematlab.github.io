@@ -33,6 +33,21 @@
   font-weight: 700;
 }
 
+.rise-nav .navbar-nav .nav-link[aria-current] {
+  color: #274e41;
+}
+
+.rise-nav :is(.nav-link, .btn)[aria-current] {
+  text-decoration-line: underline;
+  text-decoration-color: #348454;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .38em;
+}
+
+.rise-nav .btn[aria-current] {
+  text-decoration-color: #d6ef9e;
+}
+
 /* Match the third slide's image area and green transition across the carousel. */
 @media (min-width: 1200px) {
   .rise-nav .home-brand-expansion { font-size: 14px; }
@@ -71,6 +86,9 @@
 
 .home-page :is(.home-section-header, .home-community-copy) > .rise-section-title {
   margin: 0;
+}
+
+.home-page :is(.home-section-header, .home-community-copy, .rise-footer-copy) > .rise-section-title {
   font-size: clamp(32px, calc(24px + 1.6vw), 46px);
   line-height: 1.12;
   letter-spacing: -.025em;
@@ -236,8 +254,8 @@
   #mission .text-card { transition: none; }
 }
 
-/* Keep both the wordmark and the full menu visible on compact screens. */
-@media (min-width: 768px) {
+/* Give the wordmark the remaining space beside the expanded menu. */
+@media (min-width: 992px) {
   .rise-nav .navbar-brand {
     flex: 1 1 0;
     min-width: 0;
@@ -255,56 +273,28 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 849.98px) {
-  .rise-nav .home-brand-expansion {
-    display: none;
-  }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .rise-nav .home-brand-title { font-size: 17px; }
+  .rise-nav .navbar-collapse .nav-link { padding-inline: 6px !important; }
+  .rise-nav .navbar-collapse .btn { font-size: 14px; padding-inline: 14px; }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .rise-nav .rise-logo-wrap,
-  .rise-nav .rise-logo {
-    width: 48px;
-    height: 48px;
-  }
-
-  .rise-nav .home-brand-title {
-    font-size: 17px;
-    text-wrap: balance;
-  }
-
-  .rise-nav .navbar-collapse {
-    padding-top: 0;
-  }
-
-  .rise-nav .navbar-collapse .nav-link {
-    padding-inline: 7px !important;
-  }
-
-  .rise-nav .navbar-collapse .btn {
-    margin-top: 0;
-    padding-inline: 14px;
-  }
+@media (min-width: 1200px) and (max-width: 1359.98px) {
+  .rise-nav .home-brand-title { font-size: 20px; }
+  .rise-nav .nav-link { font-size: 15px; padding-inline: 8px !important; }
+  .rise-nav .btn { font-size: 15px; }
 }
 
-@media (min-width: 768px) and (max-width: 849.98px) {
-  .rise-nav .home-brand-title { font-size: 16px; }
-  .rise-nav .navbar-collapse .nav-link {
-    font-size: 14px;
-    padding-inline: 4px !important;
-  }
-  .rise-nav .navbar-collapse .btn {
-    font-size: 14px;
-    padding-inline: 11px;
-  }
+@media (min-width: 992px) and (max-width: 1359.98px) {
+  .rise-footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (min-width: 850px) and (max-width: 1199.98px) {
-  .rise-nav :is(.home-brand-title, .home-brand-expansion) { text-wrap: balance; }
+@media (max-width: 359.98px) {
+  .rise-footer-links > .rise-link { font-size: 15px; }
 }
 
 /* Fit both wordmark lines in the space between the logo and menu button. */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .rise-nav {
     padding-block: 10px !important;
   }
@@ -462,5 +452,48 @@
   #home-publications .pub-entry {
     grid-template-columns: clamp(64px, 21vw, 88px) minmax(0, 1fr);
     column-gap: 12px;
+  }
+}
+
+/* Keep the main menu within reach on long pages and enlarge its touch targets. */
+@media (max-width: 767.98px) {
+  .rise-nav .home-brand-expansion {
+    font-size: clamp(.6875rem, 4.3cqi, .75rem);
+  }
+
+  .rise-nav .home-brand-title {
+    font-size: clamp(.8125rem, 5.3cqi, 1.125rem);
+  }
+
+  .rise-nav .navbar-collapse .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 8px !important;
+    border-bottom: 1px solid #dfe7e2;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .rise-nav .navbar-collapse .btn {
+    width: 100%;
+    margin-inline-end: 0;
+    margin-block-start: 12px;
+  }
+}
+
+@media (max-width: 767.98px) and (min-height: 450px) {
+  html:has(.rise-nav) {
+    scroll-padding-top: 92px;
+  }
+
+  .rise-nav {
+    position: sticky;
+    inset-block-start: 0;
+  }
+
+  .rise-nav .navbar-collapse.show {
+    max-height: calc(100dvh - 6rem);
+    overflow-y: auto;
   }
 }

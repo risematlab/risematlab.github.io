@@ -1,14 +1,14 @@
 (() => {
   'use strict';
   const labels = {
-    all: 'All topics',
-    composites: 'Composites & mechanics',
-    data: 'Data-driven design & characterization',
-    extreme: 'Extreme environments & space',
-    low: 'Decarbonization & circularity',
-    environment: 'Environmental & functional materials',
-    durability: 'Durability & infrastructure preservation',
-    other: 'Other research',
+    all: 'ALL TOPICS',
+    composites: 'COMPOSITES & MECHANICS',
+    data: 'DATA-DRIVEN DESIGN & CHARACTERIZATION',
+    extreme: 'EXTREME ENVIRONMENTS & SPACE',
+    low: 'DECARBONIZATION & CIRCULARITY',
+    environment: 'ENVIRONMENTAL & FUNCTIONAL MATERIALS',
+    durability: 'DURABILITY & INFRASTRUCTURE PRESERVATION',
+    other: 'OTHER RESEARCH',
   };
   // Assignments are curated against titles on the existing page; unassigned interdisciplinary
   // records remain available under All topics. Multiple labels are intentional.
@@ -152,7 +152,7 @@
       mobileYear.addEventListener('change', apply);
       mobileReset.addEventListener('click', () => {
         reset.click();
-        input.focus();
+        mobile.querySelector('summary').focus({preventScroll: true});
       });
       phoneWidth.addEventListener('change', () => {
         updateMobileControls();

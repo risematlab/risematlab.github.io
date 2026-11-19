@@ -10,7 +10,7 @@
     <link rel="preload" href="assets/fonts/rise-link-arrows.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="assets/css/styles.css?v=footer-4">
     <script src="assets/js/external-link-icons.js?v=link-design-2" defer></script>
-    <link rel="stylesheet" href="assets/css/rise-collaborators.css?v=14">
+    <link rel="stylesheet" href="assets/css/rise-collaborators.css?v=15">
     <link rel="stylesheet" href="assets/css/rise-research-accessibility.css">
     <link rel="stylesheet" href="assets/css/rise-research-durability.css">
     <link rel="stylesheet" href="assets/css/rise-research-images.css">
@@ -20,13 +20,13 @@
     <link rel="stylesheet" href="assets/css/rise-research.css">
     <link rel="stylesheet" href="assets/css/rise-section-heroes.css?v=6">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
-    <link rel="stylesheet" href="assets/css/home-brand.css?v=10">
-    <link rel="stylesheet" href="assets/css/people-refinements.css?v=12">
+    <link rel="stylesheet" href="assets/css/home-brand.css?v=mobile-navigation-1">
+    <link rel="stylesheet" href="assets/css/people-refinements.css?v=17">
 </head>
 
 <body class="rise-site" id="top">
     <a class="visually-hidden-focusable rise-skip-link" href="#main-content">Skip to main content</a>
-    <nav class="navbar navbar-expand-md bg-body py-0 rise-nav">
+    <nav class="navbar navbar-expand-lg bg-body py-0 rise-nav" aria-label="Main navigation">
         <div class="container rise-wrap"><a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="RISE Infrastructure Materials Laboratory home">
                 <div class="rise-logo-wrap"><img class="img-fluid rise-logo" src="assets/img/RISE%20ICON.png" alt=""></div><span class="rise-brand-name"><span class="home-brand-expansion">Resilient, Intelligent, Sustainable &amp; Energy-efficient</span><span class="home-brand-title">RISE Infrastructure Materials Laboratory</span></span>
             </a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcol-2" aria-controls="navcol-2" aria-expanded="false"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -34,21 +34,29 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="research.html">Research Areas</a></li>
                     <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="people.html">People</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="people.html" aria-current="page">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="media.html">RISE in Media</a></li>
-                </ul><a class="btn btn-primary ms-md-2" role="button" href="join.html">Join the Lab</a>
+                </ul><a class="btn btn-primary ms-lg-2" role="button" href="join.html">Join RISE</a>
             </div>
         </div>
     </nav>
     <main id="main-content" tabindex="-1">
-    <div class="rise-page-intro rise-section-hero rise-section-hero-people"><img class="img-fluid rise-section-hero-image" src="assets/img/about-hero-team-graduation-web.avif" alt="" aria-hidden="true">
+    <div class="rise-page-intro rise-section-hero rise-section-hero-people"><img class="img-fluid rise-section-hero-image" src="assets/img/about-hero-team-graduation-web.avif" srcset="assets/img/people-hero-team-mobile-480.webp 480w, assets/img/people-hero-team-mobile-800.webp 800w, assets/img/people-hero-team-mobile-1200.webp 1200w, assets/img/people-hero-team-mobile-1440.webp 1440w, assets/img/about-hero-team-graduation-web.avif 1920w" sizes="(min-width: 2200px) 1320px, (min-width: 992px) 60vw, (min-width: 480px) and (max-height: 520px) and (orientation: landscape) min(44vw, calc(100vw - 380px)), 100vw" width="1920" height="1440" fetchpriority="high" alt="" aria-hidden="true">
         <div class="rise-wrap">
             <p class="rise-eyebrow">PEOPLE</p>
             <h1 class="rise-page-title">Curiosity, collaboration and impact</h1>
             <p class="rise-page-lede">Meet researchers whose work has helped shape the RISE Infrastructure Materials Laboratory.</p>
         </div>
     </div>
+    <nav class="people-page-nav d-md-none" aria-label="On this page">
+        <div class="rise-wrap">
+            <a href="#principal-investigator">Principal investigator</a>
+            <a href="#community">Current team</a>
+            <a href="#alumni">Alumni</a>
+            <a href="#gallery">Lab life</a>
+        </div>
+    </nav>
     <div id="principal-investigator" class="rise-section">
         <div class="rise-wrap">
             <p class="rise-eyebrow">PRINCIPAL INVESTIGATOR</p>
@@ -97,11 +105,12 @@
             <div class="people-student-grid">
                 <article class="person-card">
                     <div class="person-card-portrait"><img class="img-fluid person-photo peizhi-photo" src="assets/img/person-peizhi-wang-web.avif" alt="Portrait of Dr. Peizhi Wang" width="880" height="1120" loading="lazy" decoding="async"></div>
-                    <div class="person-card-body">
+                    <header class="person-card-heading">
                         <p class="rise-eyebrow person-card-label">POSTDOCTORAL RESEARCHER</p>
                         <h4>Dr. Peizhi Wang</h4>
-                        <p class="person-research">Studies corrosion and fire resistance in buildings and infrastructure, with a focus on ductile cementitious materials.</p>
-                    </div>
+                    </header>
+                    <p class="person-research">Studies corrosion and fire resistance in buildings and infrastructure, with a focus on ductile cementitious materials.</p>
+
                     <div class="person-background">
                         <h5 class="person-background-heading">Education &amp; background</h5>
                         <ul class="person-education" role="list">
@@ -130,11 +139,12 @@
             <div class="people-student-grid">
                 <article class="person-card">
                     <div class="person-card-portrait"><img class="img-fluid person-photo diego-photo" src="assets/img/person-diego-aparicio.avif" alt="Portrait of Diego Aparicio" width="256" height="258" loading="lazy" decoding="async"></div>
-                    <div class="person-card-body">
+                    <header class="person-card-heading">
                         <p class="rise-eyebrow person-card-label">PH.D. CANDIDATE</p>
                         <h4>Diego Aparicio</h4>
-                        <p class="person-research">Develops ultra-ductile cementitious composites for extreme thermal conditions.</p>
-                    </div>
+                    </header>
+                    <p class="person-research">Develops ultra-ductile cementitious composites for extreme thermal conditions.</p>
+
                     <div class="person-background">
                         <h5 class="person-background-heading">Education &amp; background</h5>
                         <ul class="person-education" role="list">
@@ -150,12 +160,13 @@
                     </a>
                 </article>
                 <article class="person-card">
-                    <div class="person-card-portrait"><img class="img-fluid person-photo klay-photo" src="assets/img/person-klay-portrait-web.webp" alt="Portrait of Yinjian “Klay” Li" width="720" height="720" loading="lazy" decoding="async"></div>
-                    <div class="person-card-body">
+                    <div class="person-card-portrait"><img class="img-fluid person-photo klay-photo" src="assets/img/person-klay-portrait-2026.jpg" srcset="assets/img/person-klay-portrait-2026-320.webp 320w, assets/img/person-klay-portrait-2026-640.webp 640w, assets/img/person-klay-portrait-2026.jpg 1740w" sizes="(max-width: 767.98px) clamp(72px, 21vw, 100px), 240px" alt="Portrait of Yinjian “Klay” Li" width="1740" height="1627" loading="lazy" decoding="async"></div>
+                    <header class="person-card-heading">
                         <p class="rise-eyebrow person-card-label">PH.D. CANDIDATE</p>
                         <h4>Yinjian “Klay” Li</h4>
-                        <p class="person-research">Develops ultra-ductile cementitious composites to improve corrosion resistance in geothermal wells.</p>
-                    </div>
+                    </header>
+                    <p class="person-research">Develops ultra-ductile cementitious composites to improve corrosion resistance in geothermal wells.</p>
+
                     <div class="person-background">
                         <h5 class="person-background-heading">Education &amp; background</h5>
                         <ul class="person-education" role="list">
@@ -176,11 +187,12 @@
                 </article>
                 <article class="person-card">
                     <div class="person-card-portrait"><img class="img-fluid person-photo minseok-photo" src="assets/img/person-minseok-nam.jpg" alt="Portrait of Minseok Nam" width="400" height="400" loading="lazy" decoding="async"></div>
-                    <div class="person-card-body">
+                    <header class="person-card-heading">
                         <p class="rise-eyebrow person-card-label">PH.D. STUDENT</p>
                         <h4>Minseok Nam</h4>
-                        <p class="person-research">Studies ductile cementitious composites for high-temperature nuclear applications.</p>
-                    </div>
+                    </header>
+                    <p class="person-research">Studies ductile cementitious composites for high-temperature nuclear applications.</p>
+
                     <div class="person-background">
                         <h5 class="person-background-heading">Education &amp; background</h5>
                         <ul class="person-education" role="list">
@@ -197,17 +209,18 @@
                 </article>
             </div>
             <h3 class="people-group-heading">Undergraduate researchers</h3>
-            <div class="people-student-grid" style="max-width: none;">
+            <div class="people-student-grid">
                 <article class="person-card">
                     <div class="person-card-portrait"><img class="img-fluid person-photo lauren-photo" src="assets/img/person-lauren-abernathy.jpg" alt="Portrait of Lauren Abernathy" width="400" height="400" loading="lazy" decoding="async"></div>
-                    <div class="person-card-body">
+                    <header class="person-card-heading">
                         <p class="rise-eyebrow person-card-label">UNDERGRADUATE RESEARCHER</p>
                         <h4>Lauren Abernathy</h4>
-                        <p class="person-research">Civil and environmental engineering undergraduate and Honors College Professorial Assistant since 2026.</p>
-                        <a href="https://www.linkedin.com/in/lauren-abernathy-1196473a8/" class="rise-link rise-arrow-link person-profile-link" aria-label="Lauren Abernathy on LinkedIn">
-                            <span class="rise-link-label">LinkedIn</span><span class="rise-link-arrow" data-direction="diagonal" aria-hidden="true"></span>
-                        </a>
-                    </div>
+                    </header>
+                    <p class="person-research">Civil and environmental engineering undergraduate and Honors College Professorial Assistant since 2026.</p>
+                    <a href="https://www.linkedin.com/in/lauren-abernathy-1196473a8/" class="rise-link rise-arrow-link person-profile-link" aria-label="Lauren Abernathy on LinkedIn">
+                        <span class="rise-link-label">LinkedIn</span><span class="rise-link-arrow" data-direction="diagonal" aria-hidden="true"></span>
+                    </a>
+
                 </article>
             </div>
         </div>
@@ -223,6 +236,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-alvaro-paul.jpg" alt="Portrait of Álvaro Paul" width="400" height="400" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Prof. Álvaro Paul</h4>
+                                <p>RISE · 2023</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -261,6 +275,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-brandon-byers.jpg" alt="Portrait of Brandon Byers" width="400" height="400" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Dr. Brandon Byers</h4>
+                                <p>RISE · 2025–2026</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -297,6 +312,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-matias-new-web.webp" alt="Portrait of Matias Leon-Miquel" width="720" height="720" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Dr. Matias Leon-Miquel</h4>
+                                <p>RISE · 2023–2026</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -327,6 +343,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-xiaoqiang-ni.avif" alt="Portrait of Xiaoqiang “Antonio” Ni" width="263" height="267" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Dr. Xiaoqiang “Antonio” Ni</h4>
+                                <p>RISE · 2022–2026</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -339,12 +356,12 @@
                                             <span>Michigan State University</span>
                                         </li>
                                         <li>
-                                            <span class="person-education-degree">M.S.</span>
+                                            <span class="person-education-degree">M.S. in Civil Engineering</span>
                                             <span>Michigan State University</span>
                                         </li>
                                         <li>
-                                            <span class="person-education-degree">Bachelor’s in Civil and Environmental Engineering</span>
-                                            <span>Hong Kong University of Science and Technology</span>
+                                            <span class="person-education-degree">Bachelor’s in Civil Engineering</span>
+                                            <span>The Hong Kong University of Science and Technology</span>
                                         </li>
                                     </ul>
                                 </dd>
@@ -362,6 +379,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-brennan-sollenberger.avif" alt="Portrait of Brennan Sollenberger" width="265" height="270" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Brennan Sollenberger</h4>
+                                <p>RISE · 2023–2024</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -388,6 +406,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-quentin-greiner.jpg" alt="Portrait of Quentin Greiner" width="400" height="400" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Quentin Greiner</h4>
+                                <p>RISE · 2021–2022</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -419,6 +438,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-nathan-denning.avif" alt="Portrait of Nathan Denning" width="265" height="263" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Nathan Denning</h4>
+                                <p>RISE · 2022–2026</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -445,6 +465,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-kelly-couvreur.jpg" alt="Portrait of Kelly Couvreur" width="400" height="400" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Kelly Couvreur</h4>
+                                <p>RISE · 2025–2026</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -467,6 +488,7 @@
                             <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-madelyn-grant.jpg" alt="Portrait of Madelyn Grant" width="400" height="400" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Madelyn Grant</h4>
+                                <p>RISE · 2025</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt>Current position</dt>
@@ -490,10 +512,10 @@
                             </a>
                         </article>
                         <article class="person-card">
-                            <div class="person-card-portrait"><img class="img-fluid person-photo object-fit-contain" src="assets/img/rise-alumni-placeholder.png" alt="RISE Materials Lab logo" width="4167" height="4167" loading="lazy" decoding="async"></div>
+                            <div class="person-card-portrait"><img class="img-fluid person-photo object-fit-contain" src="assets/img/rise-alumni-placeholder.png" srcset="assets/img/rise-alumni-placeholder-320.webp 320w, assets/img/rise-alumni-placeholder-640.webp 640w, assets/img/rise-alumni-placeholder.png 4167w" sizes="(max-width: 767.98px) clamp(72px, 21vw, 100px), 220px" alt="RISE Materials Lab logo" width="4167" height="4167" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Connor Smith</h4>
-                                <p>EnSURE · Summer 2024</p>
+                                <p>RISE · 2024</p>
                             </header>
                             <dl class="alumni-details">
                                 <dt class="visually-hidden">Education</dt>
@@ -508,21 +530,15 @@
                             </dl>
                         </article>
                         <article class="person-card">
-                            <div class="person-card-portrait"><img class="img-fluid person-photo" src="assets/img/person-luke-naughton-web.webp" alt="Portrait of Luke Naughton" width="720" height="720" loading="lazy" decoding="async"></div>
+                            <div class="person-card-portrait"><img class="img-fluid person-photo object-fit-contain" src="assets/img/rise-alumni-placeholder.png" srcset="assets/img/rise-alumni-placeholder-320.webp 320w, assets/img/rise-alumni-placeholder-640.webp 640w, assets/img/rise-alumni-placeholder.png 4167w" sizes="(max-width: 767.98px) clamp(72px, 21vw, 100px), 220px" alt="RISE Materials Lab logo" width="4167" height="4167" loading="lazy" decoding="async"></div>
                             <header class="alumni-card-heading">
                                 <h4>Luke Naughton</h4>
-                                <p>EnSURE · Summer 2022</p>
+                                <p>RISE · 2022</p>
                             </header>
                             <dl class="alumni-details">
-                                <dt>Current position</dt>
-                                <dd><strong>Student Physician</strong><br>Touro College of Osteopathic Medicine</dd>
                                 <dt class="visually-hidden">Education</dt>
                                 <dd>
                                     <ul class="person-education" role="list">
-                                        <li>
-                                            <span class="person-education-degree">D.O. program (in progress)</span>
-                                            <span>Touro College of Osteopathic Medicine</span>
-                                        </li>
                                         <li>
                                             <span class="person-education-degree">Mechanical Engineering</span>
                                             <span>Michigan State University</span>
@@ -530,9 +546,6 @@
                                     </ul>
                                 </dd>
                             </dl>
-                            <a href="https://www.linkedin.com/in/luke-naughton-395919202/" class="rise-link rise-arrow-link person-profile-link" aria-label="Luke Naughton on LinkedIn">
-                                <span class="rise-link-label">LinkedIn</span><span class="rise-link-arrow" data-direction="diagonal" aria-hidden="true"></span>
-                            </a>
                         </article>
                     </div>
                 </section>
@@ -593,7 +606,7 @@
                         <h2 class="rise-section-title">Let’s build what comes next.</h2>
                         <p class="rise-intro">Research, education and collaboration at the RISE Materials Lab.</p>
                         <nav class="rise-footer-contact" aria-label="Connect with the RISE Materials Lab">
-                            <a href="join.html" class="rise-footer-action rise-footer-action-primary rise-arrow-link">Join the Lab <span class="rise-link-arrow" data-direction="right" aria-hidden="true"></span></a>
+                            <a href="join.html" class="rise-footer-action rise-footer-action-primary rise-arrow-link">Join RISE <span class="rise-link-arrow" data-direction="right" aria-hidden="true"></span></a>
                             <a href="mailto:billjin@egr.msu.edu" class="rise-footer-action">Email Dr. Jin</a>
                             <a href="https://www.linkedin.com/company/rise-materials-lab/posts/?feedView=all" class="rise-footer-action rise-arrow-link">RISE on LinkedIn <span class="rise-link-arrow" data-direction="diagonal" aria-hidden="true"></span></a>
                         </nav>
@@ -602,7 +615,7 @@
                         <a href="index.html" class="rise-link">Home</a>
                         <a href="research.html" class="rise-link">Research Areas</a>
                         <a href="publications.html" class="rise-link">Publications</a>
-                        <a href="people.html" class="rise-link">People</a>
+                        <a href="people.html" class="rise-link">Team</a>
                         <a href="news.html" class="rise-link">News</a>
                         <a href="media.html" class="rise-link">RISE in Media</a>
                     </nav>
@@ -641,6 +654,10 @@
                     <li class="rc-card">
                       <div class="rc-mark"><img src="assets/img/netl-official.png" alt="" loading="lazy" decoding="async"></div>
                       <span class="rc-name">National Energy Technology Laboratory</span>
+                    </li>
+                    <li class="rc-card">
+                      <div class="rc-mark"><img src="assets/img/sponsor-medc.jpg" width="500" height="281" alt="" loading="lazy" decoding="async"></div>
+                      <span class="rc-name">Michigan Economic Development Corporation</span>
                     </li>
                   </ul>
                 </div>

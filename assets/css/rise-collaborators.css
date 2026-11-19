@@ -72,6 +72,12 @@
   transform: scale(1.18);
 }
 
+.rise-sponsor-footer .rc-mark img[src$="/sponsor-medc.jpg"] {
+  width: 100%;
+  max-height: none;
+  transform: scale(1.12);
+}
+
 .rise-sponsor-footer .rc-name {
   max-width: 25ch;
   font-size: clamp(14px, 1.2vw, 16px);

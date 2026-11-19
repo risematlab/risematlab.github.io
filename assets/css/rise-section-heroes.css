@@ -141,6 +141,10 @@
 }
 
 .rise-section-hero-publications { --hero-focus: 50% 80%; }
+.rise-section-hero-publications > picture {
+  position: absolute;
+  inset: 0;
+}
 .rise-section-hero-news { --hero-focus: 50% 55%; }
 .rise-section-hero-media { --hero-focus: 50% 60%; }
 .rise-section-hero-people { --hero-focus: 50% 63%; }
@@ -229,6 +233,10 @@
   .rise-section-hero-people {
     --hero-focus: 50% 67%;
   }
+
+  .rise-section-hero-publications {
+    --hero-focus: 50% 65%;
+  }
 }
 
 /* On short landscape screens, keep the masthead copy beside the image. */
@@ -305,4 +313,21 @@
 /* Align the first content section across the primary navigation pages. */
 .rise-site main > .rise-section-hero + .rise-section {
   padding-block: clamp(36px, 4.2vw, 56px);
+}
+
+@media (max-width: 359.98px) {
+  .home-page .rise-hero {
+    --hero-photo-height: clamp(144px, 48vw, 172px);
+    --hero-copy-inset: 20px;
+    --hero-copy-top: calc(var(--hero-photo-height) + 16px);
+  }
+
+  .home-page .rise-hero .rise-actions {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .home-page .rise-hero .rise-actions .btn {
+    padding-inline: 9px;
+  }
 }
