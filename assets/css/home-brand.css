@@ -227,6 +227,7 @@
   #home-publications .pub-entry > :is(.featured-paper-image, .home-image-link) {
     grid-column: 1;
     grid-row: 1 / span 5;
+    align-self: center;
   }
 
   #home-publications .featured-paper-image {

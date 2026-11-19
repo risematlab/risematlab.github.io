@@ -331,3 +331,37 @@
     padding-inline: 9px;
   }
 }
+
+/* Size each copy row to the tallest slide on narrow screens. */
+@supports (grid-template-rows: subgrid) {
+  @media (max-width: 991.98px) {
+    .home-page .rise-hero .carousel-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: repeat(4, auto);
+    }
+
+    .home-page .rise-hero .carousel-inner::after {
+      content: none;
+    }
+
+    .home-page .rise-hero .carousel-item {
+      display: grid;
+      grid-area: 1 / 1 / -1 / -1;
+      grid-template-rows: subgrid;
+      margin-inline-end: 0;
+      visibility: hidden;
+    }
+
+    .home-page .rise-hero .carousel-item:is(.active, .carousel-item-next, .carousel-item-prev) {
+      visibility: visible;
+    }
+
+    .home-page .rise-hero .rise-hero-copy {
+      display: grid;
+      grid-row: 1 / -1;
+      grid-template-rows: subgrid;
+      align-items: start;
+    }
+  }
+}
