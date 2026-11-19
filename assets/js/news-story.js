@@ -100,7 +100,7 @@
       trigger = button;
       image.alt = img.alt;
       image.src = source;
-      original.href = img.dataset.originalSrc || source;
+      original.href = source;
       dialog.showModal();
     });
   }

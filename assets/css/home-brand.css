@@ -458,11 +458,7 @@
 /* Keep the main menu within reach on long pages and enlarge its touch targets. */
 @media (max-width: 767.98px) {
   .rise-nav .home-brand-expansion {
-    font-size: clamp(.6875rem, 4.3cqi, .75rem);
-  }
-
-  .rise-nav .home-brand-title {
-    font-size: clamp(.8125rem, 5.3cqi, 1.125rem);
+    font-size: clamp(.5625rem, 4.15cqi, .75rem);
   }
 
   .rise-nav .navbar-collapse .nav-link {
