@@ -410,42 +410,6 @@
   }
 }
 
-/* Keep the first controls within reach on shorter laptop displays. */
-@media (min-width: 992px) and (max-width: 1399.98px) and (max-height: 900px) {
-  .rise-site .rise-section-hero {
-    --hero-photo-width: 50%;
-    --hero-photo-height: 100%;
-    min-height: clamp(246px, 19.5vw, 290px);
-  }
-}
-
-/* Align masthead artwork and controls with the content edges on wide screens. */
-@media (min-width: 1600px) {
-  .rise-site .rise-section-hero,
-  .home-page .rise-hero {
-    --hero-photo-width: min(48vw, 810px);
-    --hero-copy-end: calc(var(--hero-copy-inset) + var(--hero-photo-width) + 24px);
-    --hero-gradient:
-      linear-gradient(90deg, var(--hero-green), rgba(12, 52, 43, .62) 12%, transparent 36%),
-      linear-gradient(270deg, var(--hero-green), transparent 10%);
-  }
-
-  .rise-section-hero .rise-section-hero-image,
-  .rise-section-hero::after,
-  .home-page .rise-hero .carousel-item > img,
-  .home-page .rise-hero .carousel-item::after {
-    right: var(--hero-copy-inset);
-  }
-
-  .home-page .rise-hero .carousel-control-next {
-    right: var(--hero-copy-inset);
-  }
-
-  .home-page .rise-hero .carousel-control-prev {
-    right: calc(var(--hero-copy-inset) + 56px);
-  }
-}
-
 /* Keep the page title and introduction close to the controls on very short screens. */
 @media (min-width: 480px) and (max-width: 991.98px) and (max-height: 320px) and (orientation: landscape) {
   .rise-site .rise-section-hero {
