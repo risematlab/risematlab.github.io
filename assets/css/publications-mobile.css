@@ -173,6 +173,20 @@
   .publication-mobile-meta { grid-column: 1 / -1; }
 }
 
+@media (min-width: 480px) and (max-width: 991.98px) and (max-height: 320px) and (orientation: landscape) {
+  #publication-list.publication-mobile-ready { padding-block-start: 12px; }
+
+  #publication-list.publication-mobile-ready .publication-search > .rise-eyebrow {
+    display: none;
+  }
+
+  #publication-list.publication-mobile-ready .publication-search .rise-search-input {
+    padding-block: 10px;
+  }
+
+  .publication-mobile-filters { margin-block-start: 0; }
+}
+
 @media (min-width: 992px) and (max-height: 820px) {
   #publication-list { padding-block-start: 28px; }
   #publication-list .publication-layout { margin-top: 20px; }

@@ -48,38 +48,7 @@
 .media-play::after { content: ""; margin-left: 4px; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 12px solid #fff; }
 @media (prefers-reduced-motion: reduce) { .media-preview img { transition: none; } }
 
-.media-section-links { display: none; }
-
-@media (max-width: 991.98px) {
-  .rise-site main > .rise-section-hero-media + .media-section { padding-top: 16px; }
-
-  .media-section-links {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .media-section-links a {
-    display: grid;
-    place-items: center;
-    min-height: 44px;
-    padding: 6px 4px;
-    border: 1px solid #c5d7ca;
-    border-radius: 6px;
-    background: #f2f6ef;
-    color: var(--rise-green);
-    font-size: .875rem;
-    font-weight: 600;
-    line-height: 1.25;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  .media-section-links a:is(:hover, :focus-visible) { text-decoration: underline; }
-}
-
 @media (min-width: 480px) and (max-width: 991.98px) and (max-height: 520px) and (orientation: landscape) {
   .media-section { padding-block: 24px; }
-  .media-section :is(.media-section-links, .media-section-heading) { margin-bottom: 12px; }
+  .media-section .media-section-heading { margin-bottom: 12px; }
 }

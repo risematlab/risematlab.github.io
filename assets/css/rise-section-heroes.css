@@ -61,6 +61,7 @@
 .home-page .rise-hero .carousel-item {
   height: auto;
   min-height: 0;
+  background-color: var(--hero-green);
 }
 
 .home-page .rise-hero .rise-hero-copy {
@@ -375,8 +376,8 @@
       visibility: hidden;
     }
 
-    /* Let Bootstrap place the incoming slide offscreen before it animates. */
-    .home-page .rise-hero .carousel-item:not(.carousel-item-start, .carousel-item-end) {
+    /* Reset hidden slides before they are shown again. */
+    .home-page .rise-hero .carousel-item:not(.active, .carousel-item-start, .carousel-item-end) {
       transition: none;
     }
 
@@ -442,5 +443,48 @@
 
   .home-page .rise-hero .carousel-control-prev {
     right: calc(var(--hero-copy-inset) + 56px);
+  }
+}
+
+/* Keep the page title and introduction close to the controls on very short screens. */
+@media (min-width: 480px) and (max-width: 991.98px) and (max-height: 320px) and (orientation: landscape) {
+  .rise-site .rise-section-hero {
+    --hero-copy-top: 8px;
+  }
+
+  .rise-site .rise-section-hero > .rise-wrap > .rise-eyebrow {
+    display: none;
+  }
+
+  .rise-site .rise-section-hero .rise-page-title {
+    margin-bottom: 6px;
+  }
+
+  .rise-site main > .rise-section-hero + :is(#overview, #opportunities) {
+    padding-block-start: 18px;
+  }
+
+  #overview > .rise-wrap > .rise-eyebrow {
+    margin-bottom: 8px;
+  }
+
+  #overview > .rise-wrap > .rise-section-title {
+    margin-bottom: 12px;
+  }
+
+  #overview > .rise-wrap > .rise-intro {
+    margin-bottom: 16px;
+  }
+}
+
+/* Keep everyone in the frame when a group photograph has a narrow side panel. */
+@media (min-width: 480px) and (max-width: 739.98px) and (max-height: 520px) and (orientation: landscape) {
+  .rise-site :is(.rise-section-hero-join, .rise-section-hero-people) {
+    --hero-gradient: linear-gradient(90deg, var(--hero-green), transparent 13%);
+  }
+
+  :is(.rise-section-hero-join, .rise-section-hero-people) .rise-section-hero-image {
+    object-fit: contain;
+    object-position: center;
   }
 }
