@@ -34,10 +34,6 @@
   margin: 0;
 }
 
-.join-inquiry-link {
-  margin-block-start: 14px;
-}
-
 @media (min-width: 992px) {
   .join-pathways-intro {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);

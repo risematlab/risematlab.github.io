@@ -545,10 +545,10 @@ html {
   gap: 7px;
   min-height: 44px;
   padding: 9px clamp(10px, 1.1vw, 16px);
-  border: 1px solid rgb(224 237 207 / 36%);
+  border: 1px solid #e0edcf;
   border-radius: 6px;
-  color: #f2f6f1;
-  background: transparent;
+  color: #16392f;
+  background: #e0edcf;
   font-size: clamp(.875rem, 1.1vw, 1rem);
   font-weight: 600;
   line-height: 1.3;
@@ -557,17 +557,6 @@ html {
 }
 
 .rise-site .rise-footer-contact > .rise-footer-action:hover {
-  border-color: #c7dac9;
-  background: rgb(255 255 255 / 8%);
-}
-
-.rise-site .rise-footer-contact > .rise-footer-action-primary {
-  border-color: #e0edcf;
-  color: #16392f;
-  background: #e0edcf;
-}
-
-.rise-site .rise-footer-contact > .rise-footer-action-primary:hover {
   border-color: #f0f7e7;
   background: #f0f7e7;
 }
@@ -593,10 +582,6 @@ html {
   .rise-site .rise-footer-contact > .rise-footer-action {
     padding-inline: 5px;
     gap: 4px;
-  }
-
-  .rise-footer-action-primary {
-    grid-column: 1 / -1;
   }
 }
 
