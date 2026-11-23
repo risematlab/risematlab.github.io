@@ -171,7 +171,8 @@
   overflow-wrap: anywhere;
 }
 
-#community .person-research {
+#community .person-research,
+.alumni-dissertation {
   margin: 8px 0 0;
   font-size: clamp(15px, 1.1vw, 17px);
   line-height: 1.55;
@@ -329,7 +330,7 @@
   }
 
   #community .person-card > :is(.person-research, .person-background, .person-profile-link),
-  #alumni .person-card > :is(.alumni-details, .person-profile-link) {
+  #alumni .person-card > :is(.alumni-dissertation, .alumni-details, .person-profile-link) {
     grid-column: 1 / -1;
     margin: 0;
   }
